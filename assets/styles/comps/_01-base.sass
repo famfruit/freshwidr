@@ -943,11 +943,24 @@ body.flx
         display: block
     .title-layout
       overflow: scroll
-      height: 280px
+      height: 300px
       min-height: 250px
       white-space: nowrap
       padding: 10px 5px 0 5px
       margin-bottom: 10px
+      &::-webkit-scrollbar
+        display: block
+        background: none
+        width: 0px
+        height: 5px
+      &::-webkit-scrollbar-track
+        display: none
+      &::-webkit-scrollbar-thumb
+        background: $flxLinFirst
+        border-radius: 3px
+      &::-webkit-scrollbar-track-piece
+        display: block
+        background: $flxNav
       a
         color: none
         background: none

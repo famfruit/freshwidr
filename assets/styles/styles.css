@@ -3376,11 +3376,28 @@ body.flx .section .header img {
 }
 body.flx .section .title-layout {
   overflow: scroll;
-  height: 280px;
+  height: 300px;
   min-height: 250px;
   white-space: nowrap;
   padding: 10px 5px 0 5px;
   margin-bottom: 10px;
+}
+body.flx .section .title-layout::-webkit-scrollbar {
+  display: block;
+  background: none;
+  width: 0px;
+  height: 5px;
+}
+body.flx .section .title-layout::-webkit-scrollbar-track {
+  display: none;
+}
+body.flx .section .title-layout::-webkit-scrollbar-thumb {
+  background: #ef9f48;
+  border-radius: 3px;
+}
+body.flx .section .title-layout::-webkit-scrollbar-track-piece {
+  display: block;
+  background: #141414;
 }
 body.flx .section .title-layout a {
   color: none;
