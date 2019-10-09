@@ -32,6 +32,7 @@ function autoLoadClasses($className){
       exit;
     }
   }
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

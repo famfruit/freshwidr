@@ -33,28 +33,39 @@
           $trailerTag = 'tv';
           $atg = 'serie';
         }
+        var_dump($atg);
         $vidID = $data['results'][0]['id'];
         $vidData = "http://api.themoviedb.org/3/".$trailerTag."/".$vidID."/videos?api_key=".$main->key;
+        var_Dump($vidData);
         $header = $data['results'][0]['backdrop_path'];
         $vd = json_decode(file_get_contents($vidData),true);
 
+        var_dump($vd);
 
       ?>
       <div class="section recom">
         <div class="overlay" style="background-image: url(<?php echo 'https://image.tmdb.org/t/p/original'.$header; ?>)"></div>
 
         <div class="recomContent">
-        <div class="recVid">
-            <div id="playerWrap">
+          <?php
+          if($vd['results']){
+            ?>
+            <div class="recVid">
+              <div id="playerWrap">
                 <iframe
-                    width="640" height="360"
-                    src="https://www.youtube.com/embed/<?php echo $vd['results'][0]['key'] ?>?version=3&mute=1&controls=0&rel=0&autoplay=1&enablejsapi=1&showinfo=0"
-                    frameborder="0"
-                    allowfullscreen
-                    muted
+                width="640" height="360"
+                src="https://www.youtube.com/embed/<?php echo $vd['results'][0]['key'] ?>?version=3&mute=1&controls=0&rel=0&autoplay=1&enablejsapi=1&showinfo=0"
+                frameborder="0"
+                allowfullscreen
+                muted
                 ></iframe>
+              </div>
             </div>
-        </div>
+            <?php
+          } else {
+          }
+
+           ?>
         <script>
         var playerFrame = document.currentScript.previousElementSibling.children[0].children[0];
 
