@@ -1,0 +1,47 @@
+[04-Feb-2019 07:17:15 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:15 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:15 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:20 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:20 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:20 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:25 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:25 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:25 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:30 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:30 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:30 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:35 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:35 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:35 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:40 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:40 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:40 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:45 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:45 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:45 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:50 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:50 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:50 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:17:55 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:17:55 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:17:55 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:18:00 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:18:00 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:18:00 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:18:05 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:18:05 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:18:05 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[04-Feb-2019 07:18:10 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[04-Feb-2019 07:18:10 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 5
+[04-Feb-2019 07:18:10 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[06-Jun-2019 05:05:33 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2002): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2 &quot;No such file or directory&quot;) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[06-Jun-2019 05:05:33 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/ordEval.php on line 5
+[06-Jun-2019 05:05:33 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/ordEval.php on line 7
+[06-Jun-2019 05:05:33 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/ordEval.php on line 9
+[06-Jun-2019 05:05:37 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2002): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2 &quot;No such file or directory&quot;) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[06-Jun-2019 05:05:37 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/uscon.php on line 6
+[06-Jun-2019 05:05:37 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/uscon.php on line 7
+[06-Jun-2019 05:05:38 America/New_York] PHP Warning:  mysqli_connect(): (HY000/2002): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2 &quot;No such file or directory&quot;) in /home/widrgwbu/public_html/script/func/co_p.php on line 7
+[06-Jun-2019 05:05:38 America/New_York] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/ordEval.php on line 5
+[06-Jun-2019 05:05:38 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/widrgwbu/public_html/x/func/ordEval.php on line 7
+[06-Jun-2019 05:05:38 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/widrgwbu/public_html/x/func/ordEval.php on line 9

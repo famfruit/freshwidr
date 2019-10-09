@@ -1,0 +1,401 @@
+### Done
+    - Kanaler #global
+    / Index #Responsive fix
+    / Index #Mid/Bottom new design
+
+
+# Overall
+  ## div.section height = auto + padding
+  ## font-family & color fix över hela sidan
+
+# Index
+  < mobile
+    Prova gratis & Mer om discord btn fix
+
+
+
+# Compare sector
+  # Header & Paragraph
+  # Design fix Responsive
+  # (?) Hover text - Efter 12mån nytt pris etc
+
+# Help
+  Views, comments page by page basis
+  Dubblecheck commentsystem(striptags)
+
+
+
+#### COMPLETED #####
+produkter.php # Priceholder > padding-top: 0
+filmer.php
+help.php
+  Fixa ´help´ table i DB
+index.php
+
+func/
+  gvod.php
+  search.php
+classes/
+assets/img/
+assets/styles/
+  styles.css
+assets/dom/
+  *.php (footer, freeplug, mobilenav)
+
+
+
+
+
+
+
+
+
+
+
+button_transparent
+button_white
+button
+
+header_white
+header_small
+header_second
+header
+
+para_white
+para
+
+span_white
+span
+
+
+
+
+
+
+
+
+
+pageviews & connections
+ # sql select connections count
+
+comments
+ # sql get usercontent->comments
+ # foreach comment count++
+ # return count
+
+threads
+ # sql count(help)
+
+orders
+ # sql count(orders)
+
+nations
+ # sql select distinct channels
+
+channels
+ # sql select channels
+ # foreach channels
+  # channels.split("\r\n")
+  # count split array
+    # add count  outside loop
+
+wallets
+ # sql count wallets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      # btc/swish                 # Only swish
+| adress                              |  used                     | blocked
+| 37U57pMRswH61kzHicGRaTEEh6aL7oNHe8  |   0                       |    0
+| 37U57pMRswH61kzHicGRaTEEh6aL7oNHe8  |   0                       |    0
+| 37U57pMRswH61kzHicGRaTEEh6aL7oNHe8  |   0                       |    0
+| 37U57pMRswH61kzHicGRaTEEh6aL7oNHe8  |   0                       |    0
+
+
+
+
+
+
+
+
+
+if payment = swish:
+  # To prevent safello from blocking already used addresses
+  select * from W where used = 0 and blocked = 0
+
+elif payment = btc
+ # select * from W where used = 0
+
+
+
+
+
+
+
+
+
+
+# ROW 149 REMVOE COMMENT
+
+
+
+
+ admin panel
+  search results fix
+  edit wallet
+  support msg / read only
+  live update top dash
+
+
+
+
+
+netflix
+  db
+    helt ny db, inte widrs
+    key = pz2O_0Ng-m5L0v8S_xFmiSb
+      sha_hash(KEY) insert into DB
+
+    select key from db
+
+                       HASHED KEY
+                ___________||__________
+    AES_ENCRYPT(pz2O_0Ng-m5L0v8S_xFmiSb)
+
+
+
+  admin panel
+    se användare, användarens invites, vilka den invitat, ge varje använder en reftag = invitemember, spara loggs kring tider, filmer, serier osv
+  watch_portal
+    # en dashboard med alla filmer
+    # smidig kategori picker
+       - serier/filmer
+       - subkategorier
+
+
+    # spara varje filmklick i LocalStorage, visa som senast tittat, sortera efter datum
+
+
+    en profilsida
+      användare
+      reggad tid
+      invitade snubbar
+
+
+    FLIX TESTKONTO
+      kolla på vad som i 1 vecka
+        när tiden är slut, flagga för att köpa IPTV
+
+      restriktioner
+        ett testkonto per månad per IP om inte annat anges
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # Movies
+    /* if !video
+
+  # Series
+    /* if !video
+    /* Autoload s01_e01
+    /* Fixa it however
+  # Search
+    /* SQL SELECT title FROM movies, series WHERE LIKE %variable%
+    /* Fix Search-Results
+
+  # History
+    7* Base it on portalDom/history.php
+    /* Make it importable
+    /* Enable click count
+       /* Map the array based on each arrays count (To get the latest)
+
+  # Spotlight Header
+    * Show the most viewed movie or serie
+  # More Navigation
+    /* Profile, Movies, Series, Settings, Logout
+
+  # Footer
+    /* Its a Widr.tv project bla bla bla
+    /* Link to widr.tv, produkter
+
+  # Features
+    * Back button location.history - 1 (?)
+    * Report error / 403, 404 osv
+      * Button -> send report
+        report =
+
+  # Paywall
+
+
+
+$movie = $cookiearray[$type]
+foreach($movie as $key => $value){
+    if(!in_array($needle, $value))
+}
+
+
+
+
+
+
+
+# load all images after pageload with data-img attribute, display loader -> hide on PL
+
+
+
+
+
+
+
+
+
+Limit all to 20
+  Sort by:
+    Date
+    Similar categories
+    Recommend
+      foreach latestcookie => genres
+        add each genre to array and increment values
+        highest value genre shuld be in recommended
+
+
+
+
+
+SPOTLIGHT HEADER FIX
+$("#movie_ID").bind("ended", function() {
+       $('#movie_ID').attr('src', 'movie_ID.src');
+ });
+
+
+
+
+
+Homepage
+  # Top section
+        select *
+        from movies
+        order by date
+        limit 10
+      UNION                 # Newest from movies and series 20 total
+        select *
+        from series
+        order by date
+        limit 10
+  # Mid
+    Big banner
+      Pick 1 from compiled genres via cookies ORDER BY DATE LIMIT 1
+      # style
+        banner / video = 60% float left
+        info = 40 right
+  # Second mid
+    Big text ("Drama", "Dokumentärer", "Action")
+    Select UNION movie, series
+      where LIKE %genres%
+      limit 10 x 2
+
+  EXPERIMENTAL
+    # Weird leovegas like playagain style footer
+  else
+    Titta igen in bottom
+
+
+
+
+
+
+Hejsan!
+
+Jag fick höra av min far att ni möjligtvis behövde hjälp med media och webbutveckling.
+Det jag är duktig på är väl allt inom webbutveckling, men jag har ett stort intresse för funktionell programmering.
+
+Tidigare erfarenheter:
+  Bokningssystem
+  Partnerhemsidor
+  Webbshoppar
+  Streaming platform
+  Bitcoinplånbok
+  Kontrollpaneler
+  Statistik
+  10+ Designs för Hemsidor/Banners/Emails
+  Innehållshanteringssystem
+  APIs
+  Python Bottar
+
+
+Allt jag har byggt är givetvis egetkodat utan några färdigmallar eller dylikt.
+För några år sedan började jag dyka in i ämnet datorkunskap och har sedan dess lärt mig en rad olika funktionella språk som C#, Python, Ruby, Javascript, Node.
+
+Vore kul att höra vad ni behöver hjälp med.
+
+Mvh,
+Ludwig Eriksson
+
+
+
+
+
+Jag började i diverse program såsom Photoshop, 3dmax studio, after effects för bild/video-redigering men det övergick väldigt fort till
+att jag började koda mina egna hemsidor där jag kunde applicera allt jag lärt mig tidigare.
+
+Dagens hemsidor har blivit väldigt mer komplicerade än de var när jag började i Adobe Dreamweaver och innefattar en rad olika funktionella programmeringsspråk
+
+
+
+Under de senaste åren har jag fokuserat på funktionella programmeringsspråk

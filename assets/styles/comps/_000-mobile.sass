@@ -1,0 +1,1386 @@
+@media only screen and (min-width: 1440px)
+  body.flx
+    div.section.player
+      div.videopl
+        iframe
+          min-height: 80vh!important
+    div.pcnav
+      div.navcontent
+        width: 50%!important
+    div.section.header
+      min-height: 700px!important
+      div.header
+        max-height: 900px!important
+        padding-bottom: 350px
+        height: 700px!important
+        div.overlay
+          bottom: -100px
+        div.headercontents
+          box-sizing: border-box
+          z-index: 9
+          height: 900px
+          padding: 10px!important
+          position: relative
+          padding-top: 250px!important
+          bottom: 0px
+          background: linear-gradient(25deg, #121111 33%, rgba(18, 17, 17, 0) 70%)!important
+          div.headerSpecs
+            position: relative
+            top: 50px
+          p, div.headerbuttons
+            position: relative
+          h1
+            position: relative
+            word-wrap: break-word
+            width: 900px
+            top: 0
+            font-weight: 900
+            text-shadow: none
+            font-size: 4.5em
+            background: linear-gradient(-90deg, #ef9f48 0%, #f37646 100%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+          p
+            top: 0
+            width: 700px
+            line-height: 1.8
+            max-width: 800px
+            height: auto
+            font-size: 16px
+          div.headerbuttons
+            top: 20px
+      img
+        position: absolute
+        top: 0
+
+@media only screen and (min-width: 535px)
+  body.flx
+    div.section.all
+      a
+        width: 1/4*100%
+        div.block
+          background-size: 100% 110%
+@media only screen and (min-width: 425px)
+  body.flx
+    div.section.header
+      div.header
+        div.trailer_video
+          video
+            width: 140%
+            left: -20%
+    div.section.all
+      a
+        width: 1/3*100%
+@media only screen and (min-width: 769px)
+  body.flx
+    div.section.all.fixedcat
+      div.catselect
+        div.catselecth
+          div.genreholder
+            width: 500px
+            a
+              width: 50%
+              float: left
+              padding: 5px 10px 5px 10px
+              border: 1px solid rgba(#000, 0.3)
+              border-top: 0
+              border-left: 0
+              span
+                border: 0
+@media only screen and (min-width: 768px)
+  body.flx
+    padding-top: 60px
+    div.section.all
+      a
+        width: 1/5*100%
+        div.block
+          background-size: 100% 140%!important
+    div.searchResults
+      top: 110px
+      border-bottom: 2px solid black
+    div.searchBar
+      top: 60px
+      border-top: 2px solid black
+    div.pcnav
+      display: block
+    div.portalNav
+      display: none
+    div.section.header
+      min-height: 500px
+      div.header
+        max-height: 650px
+        div.trailer_video
+          video
+            width: 100%
+            left: 0
+            top: -20%
+        div.headercontents
+          padding: 150px 10px 100px 10px
+          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
+        img
+          width: 100%
+          left: 0
+@media only screen and (min-width: 1024px)
+  body.flx
+    div.section.all
+      a
+        padding: 5px 5px 45px 5px
+        width: 170px
+        height: 300px
+        max-height: 300px
+        margin-right: 4px
+        div.block
+          background-size: 170px 230px!important
+          height: 230px
+          h1
+            top: 225px
+    div.section.player
+      div.videopl
+        iframe
+          min-height: 70vh
+    div.pcnav
+      div.navcontent
+        width: 70%
+    div.section.header
+      min-height: 500px
+      div.header
+        max-height: 650px
+        div.headercontents
+          padding: 150px 10px 100px 10px
+          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
+        img
+          width: 100%
+          left: 0
+@media only screen and (max-width: 1366px)
+  // ADMIN STUFF
+
+
+
+  body.admX
+    div.xBody
+      overflow: hidden
+      div.ui_content
+        left: 3vw
+        box-sizing: border-box
+        padding-left: 60px
+        padding-top: 30px
+        top: 55px
+        height: 96.5vh
+        width: 97%
+      div.ui_content.active#c1
+        div.analytic.stats
+          max-height: 60px
+        div.analytic
+          position: relative
+          width: 98%
+          right: 0
+          top: -20px
+          overflow: auto
+          padding-bottom: 0
+          height: 250px
+          max-height: 250px
+          box-sizing: border-box
+          div.botStats
+            padding: 0
+            div.metrics
+              position: absolute
+              width: 50%
+              div.counts
+                position: absolute
+                border: 1px solid #f5f5f5
+                border-top: 0
+                border-bottom: 0
+                top: 20px
+                padding-bottom: 5px
+                width: 30%
+                left: 93%
+                h2
+                  padding: 10px 0 15px 0
+                  width: 100%
+              div.profileStat
+                position: absolute
+                top: 10px
+                left: 0
+                canvas
+                  overflow: visible
+              h1
+                font-size: 18px
+                font-weight: 900
+                text-align: left
+                margin: 0
+              span
+                text-align: left
+                font-weight: 200
+                font-size: 10px
+              #day
+                &::after
+                  content: 'Dygn'
+              #week
+                &::after
+                  content: 'Vecka'
+              #mon
+                &::after
+                  content: 'Månad'
+              h2
+                text-align: center
+                position: relative
+                font-size: 30px
+                width: 1/3*100%
+                &::after
+                  color: #878787
+                  font-weight: 300
+                  font-size: 10px
+                  letter-spacing: 1px
+                  position: absolute
+                  top: initial
+                  bottom: 5px
+                  left: 0
+                  right: 0
+                  margin: 0 auto
+                  background: none
+                  -webkit-background-clip: initial
+                  -webkit-text-fill-color: initial
+            div.timerHolder
+              position: absolute
+              width: 30%
+              left: 93%
+              background: #fff
+              top: -5px
+              padding: 5px 0 5px 0
+              border: 1px solid #f5f5f5
+              border-top: 0
+              h1, span
+                font-size: 16px
+                text-align: center
+            div.currentlyOn
+              height: 230px
+              max-height: 230px
+              overflow: scroll
+              padding-left: 30px
+              box-sizing: border-box
+
+              .onln
+                width: 100%
+                text-align: left
+                font-size: 18px
+                padding: 0 0 5px 0
+                position: relative
+                left: -25px
+              width: 35%
+              float: right
+        div.orders
+          width: 98%
+          div.orderBar
+            div.addInfo
+              div.inputs
+                width: 35%
+                right: 25%
+                button
+                  color: #fff
+          div.orderBar.completed
+            div.addInfo
+              div.inputs
+                button
+                  color: #f8874c
+                  border: 1px solid #fff
+                  background: #fff
+                input
+                  border-radius: 3px
+                  background: rgba(#fff, 0.2)
+                  border: 2px solid rgba(#fff, 0.4)
+                  color: #fff
+                  &::placeholder
+                    color: rgba(#fff, 0.7)
+      div.ui_leftBar
+        a
+          i
+            padding: 10px 0 10px 0
+      div.ui_topBar
+        height: auto
+        padding: 5px 0 5px 6vw
+        position: relative
+        div.imgholder
+          width: 5.9vw
+          height: 4.2vw
+          left: 0
+          top: 0
+          position: absolute
+          text-align: center
+          background: $grad
+          img
+            width: 50%
+            left: 0
+            right: 0
+            margin: 0 auto
+            position: absolute
+            z-index: 99
+            top: 3px
+        div.resultBox.vis
+
+          height: 97.4vh
+        div.resultBox
+          top: 0
+          width: 95%
+        div.searchDiv
+          padding: 15px 5px 0px 10px
+      div.ui_content
+        div.analytic.stats
+          max-height: 50px
+
+        div.analytic
+          div.botStats
+            h1
+              font-size: 2em
+      div.ui_topBar
+
+        div.searchDiv
+          padding-top: 10px
+          input
+            padding: 0
+      div.ui_leftBar
+        width: 6vw
+        padding: 55px 0 0 0
+        a
+          padding: 20px 0 20px 0
+          i
+            padding: 20px 0 20px 0
+  // ADMIN STUFF
+  body
+    div.section.pp.incurve.free.whitebg.indx
+      top: 80vh
+
+      div.pricePlan
+        overflow: visible
+        span.disclaimer
+          bottom: -50px
+    // mostly index
+    div.navigation
+      width: 90%
+    div.sz
+      width: 70%
+    div.header
+      div.section.pp.incurve.free
+        top: 15vh
+      div.section.pp.incurve
+        top: 30vh
+        transform: scale(0.75)
+        h1.prodtitle
+          font-weight: 500
+        span.prodspan
+          font-weight: 300
+          top: -20vh
+      div.curve.disabled
+        div.ld-p.sz
+          div.ld-p_left
+            width: 60%
+            h1
+              font-size: 2em
+            span
+              font-size: .90em
+      div.connecting_block
+        width: 85%
+        top: 100px
+        box-shadow: none
+    div.section.pp.bottom
+      top: 75vh
+    div.section.pp
+      top: 50vh
+      div.bblhldr
+        div.midBubble
+          bottom: 20%
+      div.pricePlan
+        width: 90%
+        padding-top: 0
+      div#try-it-out.free
+        top: 50vh
+        padding: 10px 30px 30px 30px
+        background: #fff
+        z-index: 99
+        border-radius: 5px
+        box-shadow: 0px 0px 80px 0px rgba(233, 95, 98, 0.1)
+        span.ht
+          top: 75px
+    div#learn.section.first.fsz.bot
+      width: 100%
+      top: 60vh
+      div.sf_content.pickHolder
+        padding: 200px 0 200px 0
+      div.sf_content
+        left: 0
+        right: 0
+        margin: 0 auto
+        overflow: auto
+        float: none
+        width: 85%
+        .htop
+          font-size: 2.6em
+    // checkout
+    div.orderHeader
+      width: 90%
+    div.connecting_block.general, div.connecting_block.finalstep.visible
+      width: 90%
+    // channels
+    div.lang_cat
+      width: 90%
+    //vods
+    div.section.fsz.chn
+      div.posterBlock.visible
+        width: 1/6*100%
+        margin-left: 2%
+    //helpcenter
+    div.connecting_block.general.helpcenter
+      h1
+        font-size: 3em
+    //support
+    div.section.support
+      width: 100%
+    //footer
+    div.footer
+      top: 80vh
+      div.blockHolder
+        width: 90%
+@media only screen and (max-width: 1024px)
+  body
+    div.section.mobile.swipe
+      padding: 100px 5% 50px 5%
+      #solo
+        width: 25%
+        right: 5%
+        top: 26%
+    div.section.first.fsz.bot#learn
+      div.sf_content.pickHolder
+        .fpPick
+          width: 98%
+      div.sf_content
+        width: 95%
+        padding: 0
+        .htop
+          &::before
+            left: 10px
+          &::after
+            right: 10px
+          &::before, &::after
+            width: 10%
+    div.lang_cat
+      .listStyle.img
+        width: .95/3*100%
+    div.section.pp.incurve.free
+      top: 15vh
+      div.pricePlan
+        div.pp_block.info.unlocked
+          top: 0
+          transition: all .3s ease
+          opacity: 1
+          display: none
+        div.pp_block
+          width: 450px
+          float: none
+          margin: 0 auto
+          left: 0
+          right: 0
+          input
+            transform: scale(1.2)
+        div.pp_block.info
+          top: 25vh
+          transition: all .3s ease
+          opacity: 0
+          display: none
+    div.header
+      div.connecting_block
+        width: 95%
+        padding: 20px
+        top: 100px
+        box-shadow: none
+        div.cb
+          padding: 0 10px 0 10px
+@media only screen and (max-width: 966px)
+  body
+    div.header
+      div.curve.disabled
+        div.ld-p.sz
+          div.ld-p_left.disabled
+            width: 70%
+    div.mobNav.color
+      background: #fff
+    div.mobNav.color
+      background: #fff
+      div.expNav
+        i
+          background: $gradsave
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+        div#mobnavBars
+          div
+            background: $gradsave
+    div.mobNav
+      display: block
+      width: 100%
+      z-index: 999
+      position: absolute
+      top: 0
+      overflow: visible
+      padding: 20px
+      box-sizing: border-box
+      *
+        display: block
+    div.mobNav
+      display: block
+      width: 100%
+      z-index: 999
+      position: absolute
+      top: 0
+      overflow: visible
+      padding: 20px
+      box-sizing: border-box
+      .expNav
+        width: 100%
+        font-size: 1.8em
+        .hidden
+          display: none
+        #mobnavBars.cross
+          top: 30px
+          div
+            background: $gradsave
+          #b1
+            animation: b1 .3s ease
+            transform: rotate(45deg)
+            top: 8px
+          #b2
+            bottom: 0px
+            animation: b2 .3s ease
+            transform: rotate(-45deg)
+          #b3
+            opacity: 0
+            animation: b3 .3s ease
+            top: 10px
+        #mobnavBars
+          position: absolute
+          display: inline
+          right: 20px
+          top: 30px
+          z-index: 999
+          div
+            position: relative
+            height: 2px
+            width: 20px
+            background: #fff
+            margin-bottom: 5px
+          #b1
+            animation: b1_off .3s ease
+          #b2
+            animation: b2_off .3s ease
+          #b3
+            animation: b3_off .3s ease
+        .mbnContent.visible
+          opacity: 1
+          display: block
+          height: 100vh
+          position: fixed
+          animation: mbnav .15s ease
+          box-sizing: border-box
+          padding: 80px 0 0 0
+          div.break
+            width: 100%
+            height: 1px
+            margin: 0 auto
+            border-radius: 3px
+            background: #e2e2e2
+            margin-bottom: 0px
+          h1
+            font-family: $mainfont
+            font-size: .8em
+            height: auto
+            width: 100%
+            text-indent: 5%
+            margin: 0 auto
+            box-sizing: border-box
+            padding: 15px 0 15px 0
+            display: block
+            color: #999999
+            font-weight: 400
+            border-bottom: 1px solid rgba(#e2e2e2, 0.27)
+            text-decoration: underline
+            background: $gradsave
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            position: relative
+            a
+              padding-left: 40px
+              padding-top: 5px
+              font-size: 16px
+              i
+                font-size: 16px
+                top: 25px
+                left: 20px
+                position: absolute
+        .mbnContent
+          animation: mbnavOff .15s ease
+          width: 100%
+          height: 0vh
+          background: rgba(#fff, 1)
+          z-index: 99
+          position: fixed
+          left: 0
+          top: 0
+          h1
+            display: none
+        .bl
+          position: relative
+          z-index: 999
+          background: linear-gradient(90deg, #e34e6b 0%, #f8874c 100%)
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+        .fa-codiepie
+          float: left
+        .fa-bars
+          float: right
+          z-index: 999
+        img
+          width: 75px
+          position: relative
+          z-index: 999
+        i
+          color: #fff
+      *
+        display: block
+    div.navigation
+      display: none
+      img
+        float: left
+        position: absolute
+
+@media only screen and (max-width: 768px)
+
+  body
+    div.section.mobile.swipe
+      min-height: 100vh
+      height: auto
+      overflow: hidden
+      box-sizing: border-box
+      padding: 100px 0 50px 0
+      text-align: center
+      h1
+        font-size: 24px
+        text-align: center
+      p
+        text-align: center
+        padding: 10px 0 20px 0
+        box-sizing: border-box
+        font-size: 14px
+        width: 90%
+        margin: 0 auto
+      .btn
+        background: #fff
+        border: 0
+        td
+          border: 0
+          background: #fff
+      table
+        float: none
+        width: 90%
+        margin: 0 auto
+        text-align: center
+        border-collapse: collapse
+        margin-bottom: 20px
+        border-radius: 5px
+        tr
+          td
+            padding: 15px 0 6px 0
+            border: 1px solid rgba(#e8e8e8, 0.78)
+            text-transform: uppercase
+            font-size: 12px
+            letter-spacing: 1px
+            color: #8b8383
+            font-weight: 300
+            position: relative
+            .fa-info-circle
+              top: auto
+              bottom: 5px
+              font-size: 18px
+              color: #f8874c
+              right: 0
+              position: absolute
+            .price
+              font-size: 22px
+              text-transform: uppercase
+              strong
+                font-size: 12px
+            span
+              display: block
+              text-transform: lowercase
+              font-size: 22px
+              font-weight: 800
+              color: #717171
+              strong
+                font-weight: 300
+                position: relative
+                top: -7px
+                left: 3px
+                font-size: 12px
+            i.fa-check
+              color: #4fd4a0
+            i.fa-times-circle
+              color: #e05f4d
+            i
+              display: block
+              width: 100%
+              font-size: 22px
+              position: relative
+              top: -5px
+              margin-top: 5px
+            img
+              max-width: 150px
+      .button
+        display: block
+        cursor: pointer
+        position: relative
+        border: 0
+        outline: 0
+        background: #fff
+        border-radius: 5px
+        bottom: initial
+        font-weight: 300
+        box-sizing: border-box
+        padding: 12px
+        color: rgba(#585858, 0.85)
+        background: $gradline
+        color: #fff
+        text-decoration: none
+        font-size: 14px
+        margin: 0 auto
+        text-align: center
+        transition: all .2s ease
+        i
+          display: inline
+          box-sizing: border-box
+          top: 0px
+          left: 5px
+          font-size: 14px
+        &:hover
+          box-shadow: 0px 0px 30px 0px rgba($mix, 0.2)
+      #solo
+        width: 60%!important
+        margin: 0 auto
+        margin-top: 75px
+        background: $gradline
+        position: initial
+        tr
+          td
+            border: 1px solid rgba(#fff, 0.1)
+            color: rgba(#fff, 0.7)
+            span
+              color: rgba(#fff, 1)
+              font-size: 34px
+              text-shadow: 0px 0px 10px #ff5700
+              strong
+                color: rgba(#fff, 0.7)
+                top: -13px
+                left: 5px
+            .fa-check
+              color: rgba(#fff, 0.9)
+            img
+              max-width: 150px
+    div.contentInfo
+      display: none
+    div.section.pp.incurve.free.whitebg
+      top: 0
+    div.section.pp.incurve.free.whitebg.indx
+      top: -5vh
+      width: 100%
+      span.prodspan
+        top: 0!important
+        position: relative
+        color: rgb(71, 64, 64)
+        -webkit-text-fill-color: initial
+        -webkit-background-clip: initial
+        background: none
+        display: block
+        text-align: left
+        padding: 5px
+        font-size: 16px
+        font-weight: 400
+        margin-bottom: 40px
+      h1.prodtitle
+        top: 0!important
+        text-align: left
+        font-size: 26px
+        margin-bottom: 10px
+        font-weight: 500
+        position: relative
+      div.pricePlan
+        width: 98%
+        div.pp_block
+          width: 100%
+          div.forms
+            width: 80%
+            box-sizing: border-box
+            input
+              box-sizing: border-box
+    div.lang_cat
+      width: 100%
+      padding: 5px
+      .listStyle
+        width: 100%
+      .listStyle.img
+        width: .9/7*100%
+        padding: 20px
+        text-indent: -9999px
+        white-space: nowrap
+        img
+          max-width: 80%
+      div.block
+        width: .9/4*100%
+        text-align: center
+        border: 0
+        height: auto
+        overflow: auto
+        padding: 0
+        img
+          position: relative
+          left: 0
+          right: 0
+          margin: 0 auto
+          width: 45px
+          height: 45px
+          top: 3px
+        span
+          display: none
+      top: 0
+    div.header
+      div.warning
+        width: 100%
+        div.wbox
+          div.war-readmore
+            width: 90%
+            iframe
+             min-height: auto
+
+      div.connecting_block
+        div.cb
+          img
+            max-width: 10%
+      div.curve.full.disabled
+        div.section.pp.incurve
+          .prodtitle.prd, .prodspan.prd
+            display: none
+      div.curve.disabled
+        div.assistCurve
+          border-radius: 0
+          video
+            width: 300vw
+            height: 150vh
+        div.ld-p.sz
+          div.ld-p_left.disabled
+            width: 100%
+            text-align: left
+            div.btn_push
+              padding-bottom: 20px
+              div.button
+                width: 51%
+                float: left
+                left: 0
+                a
+                  i
+                    display: none
+              div.button.transparent
+                top: 20px
+            h1, span
+              text-align: left!important
+      div.section.pp.incurve.free
+        top: 15vh!important
+        div.pricePlan
+          div.pp_block.info.unlocked
+            top: 5vh
+            transition: all .3s ease
+            opacity: 1
+            display: none
+          div.pp_block.info
+            top: 35vh
+            transition: all .3s ease
+            opacity: 0
+            display: none
+          div.pp_block
+            width: 100%
+            input
+              transform: scale(1.2)
+    overflow-x: hidden
+    //index
+
+    div.footer
+      bottom: 0
+      top: 10vh
+      span.bottom
+        font-size: 10px
+      div.blockHolder
+        width: 90%
+        div.block
+          width: 40%
+      h1
+        font-size: 2em
+      img
+        display: none
+    div.navigation
+      display: none
+    div.section.first.fsz.bot
+      background-image: none
+      top: 30vh!important
+      height: auto
+      div.sf_content.pickHolder
+        div.fpPick.right
+          div.fpHolder
+            float: left
+            text-align: left
+            left: 20px
+          p
+            left: 0px
+        div.fpPick
+          div.fpHolder
+            width: 75%
+            p
+              width: 90%
+        img
+          max-width: 25%
+          top: 100px
+      div.sf_content
+        padding: 20px
+        box-sizing: border-box
+        left: 0!important
+        width: 100%!important
+
+        .htop
+          &::before, &::after
+            display: none
+        div.blocks
+          div.bite
+            padding: 40px 15px 25px 15px
+    div.section.pp.bottom
+      top: 0!important
+    div.section.pp
+      top: 20vh
+      height: auto
+      overflow: auto
+      padding: 100px 0 0px 0
+      div#try-it-out.free
+        width: 100%
+        border-radius: 0
+        top: 0
+        box-shadow: none
+        height: 450px
+        box-sizing: border-box
+        h1
+          font-size: 2.5em
+      div.bblhldr
+        width: 100vw
+        height: 1000px
+        overflow: hidden
+        position: absolute
+        top: 0
+        padding: 100px 0 100px 0
+        div.midBubble
+          width: 1000px
+          height: 1000px
+          left: -50%
+          top: 10%
+      div.pricePlan
+        div.pp_block
+          width: 320px
+          position: relative
+          margin: 0 auto
+          margin-bottom: 50px
+          float: none
+        div.pp_block.info
+          width: 100%!important
+        div#ultimate
+          transform: scale(1)
+    div.header
+      div.curve.full.disabled
+        padding: 100px 0 100px 0
+        height: 1000px
+        div.section.pp.incurve
+          top: 0
+          padding-top: 0
+          h1.prodtitle
+            top: 0
+            font-size: 1.5em
+            width: 80%
+          div.pricePlan
+            div.pp_block
+              span
+                font-size: 1.5em
+              ul
+                li
+                  font-size: 1.2em
+      div.connecting_block
+        width: 100%
+        box-shadow: none
+        border-radius: 0px
+        padding: 20px 5px 20px 5px
+        top: 0
+        animation: none
+        div.cb
+          width: 100%
+          margin-bottom: 50px
+          img
+            float: left
+            width: 20%
+          h1
+            display: block
+            float: right
+            width: 75%
+            top: 10px
+          p
+            display: block
+            width: 100%
+            float: left
+      div.curve
+        border-radius: 0
+        height: 800px
+
+        div.ld-p.sz
+          top: 10%
+          div.ld-p_left
+            width: 100%
+            top: 5vh
+            z-index: 9
+            h1
+              text-align: center
+            span
+              display: block
+              width: 100%
+              text-align: center!important
+              *
+                text-align: center
+            div.btn_push
+              top: 20vh
+              box-sizing: border-box
+              overflow: auto
+              div.button.transparent
+                border: 2px solid rgba(255, 255, 255, 0.3)
+              div.button
+                width: 40%
+                box-sizing: border-box
+                float: left
+                text-align: center
+                padding: 15px
+                a
+                  box-sizing: border-box
+                  padding: 0
+          div.ld-p_right
+            z-index: 0
+            top: 30vh
+            width: 175%
+            left: 0
+    div.lang_cat
+      p.listStyle
+        width: 1/2*100%
+      div.block
+        width: 1/7*100%
+    div.orderHeader
+      h1
+        font-size: 1.8em
+    div.connecting_block.general.helpcenter
+      padding: 0
+      width: 95%
+      overflow: initial
+      div.searchResults
+        h1
+          font-size: 22px
+        div.guideBox
+          div.gblock
+            img
+              width: 100%
+        div.psa
+          width: 100%
+          h1
+            font-size: 22px
+      div.lsearch
+        width: 90%
+        div.icon
+          position: absolute
+        div.info
+          position: relative
+          left: 15%
+          form
+            width: 95%
+            button
+              text-align: left
+              box-sizing: border-box
+      div.resultBox
+        box-sizing: border-box
+        top: -70px
+        padding: 0
+        div.resBar
+          position: relative
+          div.info
+            position: relative
+            left: 10%
+            span
+              margin-left: 2px
+            form
+              position: relative
+              top: 5px
+              button
+                text-align: left
+                box-sizing: border-box
+                font-size: 14px
+          div.icon
+            float: left
+            position: absolute
+            i
+              position: absolute
+              font-size: 20px
+      div.getStarted
+        width: 100%
+        padding: 0
+      div.bigIcons
+        box-sizing: border-box
+        padding: 20px
+        div.block
+          width: 100%
+          margin-bottom: 20px
+          i
+            font-size: 50px
+          h1
+            font-size: 14px
+      h1
+        font-size: 2em
+      div.sbox
+        box-sizing: border-box
+        i.fas.fa-search
+          font-size: 14px
+          right: 15px
+        input.search
+          font-size: 18px
+          width: 93%
+          &::placeholder
+            font-size: 20px
+    div.connecting_block.finalstep.visible
+      padding: 0
+      width: 100%
+      overflow: initial
+      div.orInput
+        width: 95%
+        margin: 0 auto
+        float: none
+        box-sizing: border-box
+        padding: 10px
+        div.block.top
+          div.adress
+            top: 20px
+            box-shadow: 0
+            font-size: 14px
+        div.block
+          div.conv.last
+            padding-left: 20px
+            box-sizing: border-box
+          div.conv
+            i
+              left: 85%
+      div.prodInfo
+        width: 100%
+        box-sizing: border-box
+        top: 100px
+        z-index: 2
+        margin-bottom: 100px
+    div.connecting_block.general
+      padding: 0
+      width: 100%
+      div.prodInfo
+        display: none
+      div.orInput
+        width: 100%
+        box-sizing: border-box
+        div.block.of_a
+          padding: 10px
+          div.pb
+            margin: 0 auto
+            margin-bottom: 20px
+            width: 49%
+            margin-left: 1%
+            float: left
+            box-sizing: border-box
+        div.block.io
+          input
+            width: 80%
+        div.block
+          div.radio
+            width: 80%
+    div.section.support
+      div.supportPick
+        width: 100%
+        div.sp
+          width: 100%
+          float: left
+          margin: 0 auto!important
+      h1
+        font-size: 2.5em
+      div.conForm
+        width: 90%
+    div.section.fsVod.hid_def
+      div.targetSlide
+        div.topContent
+          div.left_tc
+            h1
+              font-size: 2em
+            span
+              top: -20px
+            p
+              top: 0
+              width: 90%
+
+    div.section.fsz.chn
+      div.posterBlock.visible
+        width: .95/2*100%
+        margin-left: 1%
+@media only screen and (max-width: 425px)
+  body
+    div.header
+      div.warning
+        width: 100%
+        div.wbox
+          .button.wrb
+            background: rgba(#fff, 0.8)
+            &::after, &::before
+              display: none
+          div.war-readmore
+            width: 90%
+            iframe
+             min-height: auto
+      div.connecting_block
+        div.cb
+          img
+            max-width: 75px
+      div.curve
+        div.ld-p.sz
+          div.ld-p_left
+            div.btn_push
+              top: 50px
+            h1, span
+              text-align: left!important
+      div.curve.full.disabled
+        div.section.pp.incurve
+          h1.prodtitle
+            display: none
+      div.curve.disabled
+        div.assistCurve
+          border-radius: 0
+          video
+            width: 420vw
+            height: 150vh
+        div.ld-p_left.disabled
+          div.btn_push
+            top: 10vh!important
+            div.button
+              width: 100%!important
+    div.footer
+      h1
+        font-size: 1.6em
+    div.section.pp
+      div.pricePlan
+        div.pp_block
+          width: 290px
+    div.section.pp.incurve.free.whitebg.indx
+      padding: 150px 0 150px 0
+      .disclaimer
+        width: 100%
+
+    div#learn.section.first.fsz.bot
+      div.sf_content.pickHolder
+        div.fpPick.right
+          div.fpHolder
+            text-align: left
+            float: let
+            left: 3%
+            p
+              text-align: left
+              left: 0
+        div.fpPick
+          div.fpHolder
+            width: 100%
+          img
+            bottom: auto
+            top: 0px
+            max-width: 50%
+      div.sf_content
+        .htop
+          font-size: 24px
+        div.blocks
+          div.bite
+            width: 100%
+            padding: 40px
+
+@media only screen and (max-width: 375px)
+  body
+    div.header
+      div.curve.disabled
+        div.assistCurve
+          border-radius: 0
+          video
+            width: 420vw
+            height: 150vh
+        div.ld-p_left.disabled
+          div.btn_push
+            top: 10vh!important
+            div.button
+              width: 100%!important
+    div.section.pp.incurve.free.whitebg
+      top: -5vh
+      width: 100%
+      span.prodspan
+        top: 0!important
+        position: relative
+        color: rgb(71, 64, 64)
+        -webkit-text-fill-color: initial
+        -webkit-background-clip: initial
+        background: none
+        display: block
+        text-align: left
+        padding: 5px
+        font-size: 16px
+        font-weight: 400
+        margin-bottom: 40px
+      h1.prodtitle
+        top: 0!important
+        text-align: left
+        font-size: 26px
+        margin-bottom: 10px
+        font-weight: 500
+        position: relative
+      div.pricePlan
+        width: 98%
+        div.pp_block
+          width: 100%
+          div.forms
+            width: 80%
+            box-sizing: border-box
+            input
+              box-sizing: border-box
+    div.lang_cat
+      width: 100%
+      padding: 5px
+      .listStyle
+        width: 100%
+      .listStyle.img
+        width: .9/4*100%
+        padding: 20px
+        text-indent: -9999px
+        white-space: nowrap
+        img
+          max-width: 80%
+      div.block
+        width: .9/4*100%
+        text-align: center
+        border: 0
+        height: auto
+        overflow: auto
+        padding: 0
+        img
+          position: relative
+          left: 0
+          right: 0
+          margin: 0 auto
+          width: 45px
+          height: 45px
+          top: 3px
+        span
+          display: none

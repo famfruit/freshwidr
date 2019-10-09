@@ -1,0 +1,49 @@
+{
+  "tId": 1,
+  "viewCount": 0,
+  "comments": {
+    "0": {
+      "name": "Admin",
+      "content": "Hittar du inte det du letar efter, eller fungerar det ändå inte? Vänligen kontakta oss under <strong>'Kontakta Oss'</strong>",
+      "date": "2019-09-14 16:59:22",
+      "likes": 0,
+      "answers": {}
+    }
+  }
+}
+
+
+
+{
+  "tId": 1,
+  "viewCount": 20,
+  "comments": {
+    "0": {
+      "name": "testuser",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus nec sem quis aliquet. Maecenas eget sapien at magna iaculis blandit nec quis odio. Nullam sed nisl dui. Integer eu placerat ligula, sit amet mollis nibh. Ut condimentum tellus tincidunt vestibulum congue. Sed pulvinar justo quis lectus fringilla molestie. Nullam et pharetra eros, nec egestas quam. Cras eu pretium ante. Aliquam erat volutpat. Suspendisse tempor nulla lectus, sed mollis urna sollicitudin efficitur. Nam sed tincidunt massa, non dictum nibh. Duis scelerisque euismod lectus suscipit vestibulum. Ut in elit vitae velit ultrices consequat id sed lacus. Praesent accumsan risus mi, sit amet luctus sem fringilla condimentum.",
+      "likes": 9,
+      "date": "20190911T19:00",
+      "answers": {
+        "0": {
+          "name": "admin",
+          "content": "jaksdjkasdjka jsakd jaksdj kasdjk a",
+          "likes": 3,
+          "date": "20190911T19:00"
+        },
+        "1": {
+          "name": "answername",
+          "content": "randomcomment",
+          "likes": 1,
+          "date": "20130911T19:00"
+        }
+      }
+    },
+    "1": {
+      "name": "Admin",
+      "content": "asdlkjaskd",
+      "date": "20190911T19",
+      "likes": 4,
+      "answers": {}
+    }
+  }
+}

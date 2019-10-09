@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,200,300,400,500,700')
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700')
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap')
+$mainfont: 'Noto Sans Sc', sans-serif
+$ptsans: 'PT Sans', sans-serif
+$mix: #e95f62
+$gradpos: linear-gradient(-90deg, #e34e6b 0%, #e34e6b 100%)
+$gradneg: linear-gradient(90deg, #f8874c 0%, #f8874c 100%)
+$gradline: linear-gradient(120deg, #e34e6b 0%, #f8874c 100%)
+$gradsave: linear-gradient(90deg, #e34e6b 0%, #f8874c 100%)
+$grad: $gradsave
+$xmix: $mix
+$xgrad: $grad
+$xxgrad: $grad
+body
+  .sz
+    width: 50%
+  .fsz
+    width: 70%
+@keyframes commentSection
+  0%
+    display: none
+    opacity: 0
+    max-height: 0
+  1%
+    opacity: 0
+    display: block
+  100%
+    display: block
+    opacity: 1
+    max-height: 1000
+@keyframes wargrad
+  0%
+    background: rgba($mix, 0.1)
+    border: 2px solid rgba($mix, 0.2)
+  50%
+    background: white
+    border: 2px solid rgba(#000, 0.1)
+  100%
+    background: rgba($mix, 0.1)
+    border: 2px solid rgba($mix, 0.2)
+@keyframes b1_off
+  0%
+    transform: rotate(45deg)
+  100%
+    transform: rotate(0deg)
+@keyframes b2_off
+  0%
+    transform: rotate(-45deg)
+  100%
+    transform: rotate(0deg)
+@keyframes b3_off
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes b1
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(45deg)
+@keyframes b2
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-45deg)
+@keyframes b3
+  0%
+    opacity: 1
+    top: 0
+  100%
+    opacity: 0
+    top: 10px
+@keyframes mbnavOff
+  0%
+    display: block
+    opacity: 1
+    height: 100vh
+  99%
+    display: none
+  100%
+    opacity: 0
+    height: 0
+    display: none
+@keyframes mbnav
+  0%
+    display: none
+    opacity: 0
+    height: 0
+  1%
+    display: block
+    opacity: 0
+  100%
+    height: 100vh
+    opacity: 1
+@keyframes removeOrder
+  0%
+    left: 0
+    padding: 20px 0 20px 0
+    display: block
+    max-height: 2000px
+  100%
+    max-height: 0px
+    padding: 0
+    left: -150%
+@keyframes newBpop
+  0%
+    opacity: 0
+    display: none
+    height: 0
+    padding: 0
+  1%
+    display: block
+  100%
+    opacity: 1
+    height: auto
+    padding: 20px 0 20px 0
+
+@keyframes spopShow
+  0%
+    opacity: 0
+    display: none
+    left: -100vh
+  1%
+    display: block
+    opacity: 0
+  100%
+    left: 4.2vw
+    display: block
+    opacity: 1
+@keyframes spopHide
+  0%
+    left: 4.2vw
+    display: block
+    opacity: 1
+  99%
+    display: block
+  100%
+    display: none
+    left: -100vw
+    opacity: 0
+@keyframes popOrderShow
+  0%
+    left: 0%
+  100%
+    left: 63%
+@keyframes popOrderHide
+
+@keyframes admSearchRemove
+  0%
+    opacity: 1
+    height: 94vh
+  100%
+    height: 0
+    opacity: 0
+@keyframes admSearch
+  0%
+    display: none
+    opacity: 0
+    height: 0
+  1%
+    display: block
+    opacity: 0
+  100%
+    opacity: 1
+    height: 94vh
+
+@keyframes loader
+  0%
+    width: 0%
+  80%
+    width: 80%
+  90%
+    width: 85%
+  100%
+    width: 100%
+@keyframes header
+  0%
+    border-radius: 10%/0 0 100px 100px
+  100%
+    border-radius: 50%/0 0 200px 200px
+@keyframes totop
+  0%
+    opacity: 1
+    top: -100px
+  100%
+    opacity: 1
+    top: -150px
+@keyframes navpop
+  0%
+    top: -200px
+    opacity: 0
+  100%
+    opacity: 1
+    top: 0
+@keyframes headertext
+  0%
+    left: -5%
+    opacity: .5
+  100%
+    left: 0
+    opacity: 1
+@keyframes bigimg
+  0%
+    opacity: 0
+    right: -40%
+  100%
+    opacity: 1
+    right: -30%
+@keyframes block
+  0%
+    display: none
+    opacity: 0
+    transform: scale(0.8)
+    right: 50px
+  1%
+    display: block
+    opacity: 0
+  100%
+    transform: scale(1)
+    right: 0px
+
+
+@keyframes pi1
+  0%
+    opacity: 1
+  30%
+    opacity: 1
+  33%
+    opacity: 0
+  95%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes pi2
+  0%
+    opacity: 0
+  30%
+    opacity: 0
+  33%
+    opacity: 1
+  60%
+    opacity: 1
+  66%
+    opacity: 0
+  100%
+    opacity: 0
+@keyframes pi3
+  0%
+    opacity: 0
+  60%
+    opacity: 0
+  66%
+    opacity: 1
+  95%
+    opacity: 1
+  100%
+    opacity: 0
+@keyframes kidAni
+  0%
+    display: block
+    opacity: 1
+  99%
+    display: block
+  100%
+    opacity: 0
+    display: none
+@keyframes orderAni
+  0%
+    opacity: 1
+    display: block
+    right: 0
+  99%
+    display: none
+  100%
+    right: 200px
+    opacity: 0
+    display: none
+@keyframes fsV
+  0%
+    opacity: 0
+    display: none
+    left: 200px
+  50%
+    opacity: 0
+    left: 200px
+  99%
+    display: none
+  100%
+    left: 0
+    opacity: 1
+    display: block
+@keyframes bar
+  0%
+    width: 0%
+  100%
+    width: 100%
+@keyframes spop
+  0%
+    transform: scale(1)
+    opacity: 1
+  20%
+    transform: scale(1.3)
+    opacity: 1
+  40%
+    transform: scale(1)
+  100%
+    transform: scale(0)
+    opacity: 0
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  20%
+    transform: rotate(360deg)
+  40%
+    transform: rotate(720deg)
+  60%
+    transform: rotate(1080deg)
+  80%
+    transform: rotate(1440deg)
+  100%
+    transform: rotate(1800deg)
+.lds-grid
+  display: inline-block
+  position: relative
+  width: 64px
+  height: 64px
+  div
+    position: absolute
+    width: 13px
+    height: 13px
+    border-radius: 50%
+    background: $xmix
+    animation: lds-grid 1.2s linear infinite
+    &:nth-child(1)
+      top: 6px
+      left: 6px
+      animation-delay: 0s
+    &:nth-child(2)
+      top: 6px
+      left: 26px
+      animation-delay: -0.4s
+    &:nth-child(3)
+      top: 6px
+      left: 45px
+      animation-delay: -0.8s
+    &:nth-child(4)
+      top: 26px
+      left: 6px
+      animation-delay: -0.4s
+    &:nth-child(5)
+      top: 26px
+      left: 26px
+      animation-delay: -0.8s
+    &:nth-child(6)
+      top: 26px
+      left: 45px
+      animation-delay: -1.2s
+    &:nth-child(7)
+      top: 45px
+      left: 6px
+      animation-delay: -0.8s
+    &:nth-child(8)
+      top: 45px
+      left: 26px
+      animation-delay: -1.2s
+    &:nth-child(9)
+      top: 45px
+      left: 45px
+      animation-delay: -1.6s
+
+@keyframes lds-grid
+  0%, 100%
+    opacity: 1
+
+  50%
+    opacity: 0.5
+
+.lds-roller
+  display: inline-block
+  position: relative
+  width: 64px
+  height: 64px
+  div
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    transform-origin: 32px 32px
+    &:after
+      content: " "
+      display: block
+      position: absolute
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background: $xmix
+      margin: -3px 0 0 -3px
+    &:nth-child(1)
+      animation-delay: -0.036s
+      &:after
+        top: 50px
+        left: 50px
+    &:nth-child(2)
+      animation-delay: -0.072s
+      &:after
+        top: 54px
+        left: 45px
+    &:nth-child(3)
+      animation-delay: -0.108s
+      &:after
+        top: 57px
+        left: 39px
+    &:nth-child(4)
+      animation-delay: -0.144s
+      &:after
+        top: 58px
+        left: 32px
+    &:nth-child(5)
+      animation-delay: -0.18s
+      &:after
+        top: 57px
+        left: 25px
+    &:nth-child(6)
+      animation-delay: -0.216s
+      &:after
+        top: 54px
+        left: 19px
+    &:nth-child(7)
+      animation-delay: -0.252s
+      &:after
+        top: 50px
+        left: 14px
+    &:nth-child(8)
+      animation-delay: -0.288s
+      &:after
+        top: 45px
+        left: 10px
+
+@keyframes lds-roller
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+.lds-ellipsis.orange
+  position: absolute
+  left: 0
+  right: 0
+  margin: 0 auto
+  top: 40%
+  div
+    position: absolute
+    top: 27px
+    width: 6px
+    height: 6px
+    border-radius: 50%
+    background: rgba(#ef9f48, 0)
+    animation-timing-function: cubic-bezier(0, 1, 1, 0)
+    &:nth-child(1)
+      left: 6px
+      animation: lds-ellipsis1 0.6s infinite
+      background: rgba(#ef9f48, 0.1)
+    &:nth-child(2)
+      left: 6px
+      animation: lds-ellipsis2 0.6s infinite
+      background: rgba(#ef9f48, 0.3)
+    &:nth-child(3)
+      left: 26px
+      animation: lds-ellipsis2 0.6s infinite
+      background: rgba(#ef9f48, 0.6)
+    &:nth-child(4)
+      left: 45px
+      animation: lds-ellipsis3 0.6s infinite
+      background: rgba(#ef9f48, 1)
+.lds-ellipsis
+  display: inline-block
+  position: relative
+  width: 64px
+  height: 64px
+
+  div
+    position: absolute
+    top: 27px
+    width: 6px
+    height: 6px
+    border-radius: 50%
+    background: rgba($mix, 0)
+    animation-timing-function: cubic-bezier(0, 1, 1, 0)
+
+    &:nth-child(1)
+      left: 6px
+      animation: lds-ellipsis1 0.6s infinite
+      background: rgba($mix, 0.1)
+    &:nth-child(2)
+      left: 6px
+      animation: lds-ellipsis2 0.6s infinite
+      background: rgba($mix, 0.3)
+    &:nth-child(3)
+      left: 26px
+      animation: lds-ellipsis2 0.6s infinite
+      background: rgba($mix, 0.6)
+    &:nth-child(4)
+      left: 45px
+      animation: lds-ellipsis3 0.6s infinite
+      background: rgba($mix, 1)
+@keyframes lds-ellipsis1
+  0%
+    transform: scale(0)
+
+  100%
+    transform: scale(1)
+
+@keyframes lds-ellipsis3
+  0%
+    transform: scale(1)
+
+  100%
+    transform: scale(0)
+
+@keyframes lds-ellipsis2
+  0%
+    transform: translate(0, 0)
+
+  100%
+    transform: translate(19px, 0)
