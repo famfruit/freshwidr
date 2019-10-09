@@ -2,7 +2,7 @@
   <span class="small xxl">Nya Serier & Filmer</span>
   <div class="title-layout">
     <?php
-    $result = $main->getFromMysql("SELECT * FROM series ORDER BY releasedate DESC LIMIT 10");
+    $result = $main->getFromMysql("SELECT * FROM series ORDER BY releasedate DESC LIMIT 20");
     while($row = mysqli_fetch_assoc($result)){
       $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];
       ?>
@@ -20,7 +20,7 @@
   <span class="small xxl">Populäraste Filmer & Serier</span>
   <div class="title-layout">
     <?php
-    $result = $main->getFromMysql("SELECT * FROM series ORDER BY views DESC LIMIT 10");
+    $result = $main->getFromMysql("SELECT * FROM series ORDER BY views DESC LIMIT 20");
     while($row = mysqli_fetch_assoc($result)){
       $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];
       ?>
