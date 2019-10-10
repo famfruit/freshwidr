@@ -1,7 +1,7 @@
 <?php
 
   if($main->moviePage != 'alla'){
-      $result = $main->getFromMysql("SELECT * FROM movies WHERE title = '$main->moviePage'");
+      $result = $main->getFromMysql("SELECT * FROM movies WHERE MATCH(title) AGAINST ('$main->moviePage' IN NATURAL LANGUAGE MODE) LIMIT 1");
       if($result->num_rows > 0){
         while($row = mysqli_fetch_assoc($result)){
           if(!$main->getFromAPI($row['title'])['results']){
