@@ -249,6 +249,96 @@ body.flx
     a
       color: rgba($flxGreyCol, 1)
       text-decoration: none
+  .section.prflContent
+    padding: 0
+    input
+
+  .section.profile
+    .usertop
+      width: 100%
+      height: auto
+      overflow: auto
+      text-align: center
+      h1
+        text-align: center
+        text-transform: capitalize
+        color: $flxLinFirst
+        padding: 0
+        font-size: 1.5em
+        margin: 30px 0 0 0
+        font-weight: 400
+      span
+        text-align: center
+        display: block
+        font-weight: 600
+        color: rgba($flxGreyCol, 0.5)
+        text-transform: capitalize
+        font-size: 12px
+      .type
+        border-radius: 5px
+        border: 1px solid rgba($flxLinFirst, 0.3)
+        display: inline-block
+        padding: 2px 5px 2px 5px
+        margin: 0 auto
+
+      .profileimg
+        height: 100px
+        width: 100px
+        position: relative
+        background: #080808
+        border-radius: 50%
+        margin: 0 auto
+        top: 20px
+        span
+          overflow: hidden
+          position: absolute
+          width: 100%
+          text-align: center
+          color: #fff
+          top: 0px
+          font-weight: 600
+          font-size: 10em
+          width: 100px
+          height: 100px
+          display: block
+          border-radius: 50%
+          strong
+            position: relative
+            color: $flxLinFirst
+            top: -80%
+        &::after
+          box-sizing: content-box
+          padding: 3px
+          position: absolute
+          z-index: -1
+          top: -3px
+          left: -3px
+          right: 0
+          border-radius: 50%
+          width: 100px
+          height: 100px
+          display: block
+          content: ''
+          background: $flxIco
+    .profileCat
+      background: $flxNav
+      height: auto
+      overflow: auto
+      margin-top: 30px
+      width: 100%
+      .active
+        border-bottom: 1px solid rgba($flxLinFirst, 0.3)
+        color: $flxLinFirst
+      span
+        border-bottom: 1px solid transparent
+        width: 1/3*100%
+        display: block
+        color: $flxGreyCol
+        font-size: 10px
+        text-align: center
+        float: left
+        font-weight: 600
+        padding: 5px
   .section.login
     text-align: center
     overflow: visible
@@ -802,7 +892,15 @@ body.flx
         border-radius: 3px
         background: $flxNav
         position: absolute
+    .inputContainer.static
+      border-radius: 0
 
+      .inputwrapper
+        background: #000
+        input
+          background: transparent
+          border: 0
+          border-radius: 0
     .inputContainer
       position: relative
       width: 300px
@@ -964,16 +1062,21 @@ body.flx
       white-space: nowrap
       padding: 10px 5px 0 5px
       margin-bottom: 10px
+      &:hover
+        &::-webkit-scrollbar-thumb
+          background: rgba($flxLinFirst, 0.8)
       &::-webkit-scrollbar
         display: block
         background: none
         width: 0px
-        height: 5px
+        height: 3px
+        cursor: pointer
       &::-webkit-scrollbar-track
         display: none
       &::-webkit-scrollbar-thumb
-        background: $flxLinFirst
+        background: rgba($flxLinFirst, 0.2)
         border-radius: 3px
+        cursor: pointer
       &::-webkit-scrollbar-track-piece
         display: block
         background: $flxNav

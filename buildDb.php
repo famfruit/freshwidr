@@ -3,7 +3,7 @@
   spl_autoload_register('autoLoadClasses');
   function autoLoadClasses($className){
     $path = "classes/";
-    $ext = ".class.php";
+    $ext = ".class.ph p";
     $fullP = $path . $className . $ext;
     include_once $fullP;
   }

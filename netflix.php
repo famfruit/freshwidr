@@ -86,6 +86,8 @@ function autoLoadClasses($className){
         } else if(isset($main->historyPage)){
           include_once "assets/portalDom/spotlightHeader.php";
           include_once "assets/portalDom/watched.php";
+        } else if(isset($main->profilePage)) {
+          include_once "assets/portalDom/profile.php";
         } else {
           include_once "assets/portalDom/spotlightHeader.php";
           include_once "assets/portalDom/start.php";

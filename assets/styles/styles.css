@@ -2578,6 +2578,104 @@ body.flx span.small a {
   color: #a4a6ac;
   text-decoration: none;
 }
+body.flx .section.prflContent {
+  padding: 0;
+}
+body.flx .section.profile .usertop {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  text-align: center;
+}
+body.flx .section.profile .usertop h1 {
+  text-align: center;
+  text-transform: capitalize;
+  color: #ef9f48;
+  padding: 0;
+  font-size: 1.5em;
+  margin: 30px 0 0 0;
+  font-weight: 400;
+}
+body.flx .section.profile .usertop span {
+  text-align: center;
+  display: block;
+  font-weight: 600;
+  color: rgba(164, 166, 172, 0.5);
+  text-transform: capitalize;
+  font-size: 12px;
+}
+body.flx .section.profile .usertop .type {
+  border-radius: 5px;
+  border: 1px solid rgba(239, 159, 72, 0.3);
+  display: inline-block;
+  padding: 2px 5px 2px 5px;
+  margin: 0 auto;
+}
+body.flx .section.profile .usertop .profileimg {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  background: #080808;
+  border-radius: 50%;
+  margin: 0 auto;
+  top: 20px;
+}
+body.flx .section.profile .usertop .profileimg span {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  top: 0px;
+  font-weight: 600;
+  font-size: 10em;
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+}
+body.flx .section.profile .usertop .profileimg span strong {
+  position: relative;
+  color: #ef9f48;
+  top: -80%;
+}
+body.flx .section.profile .usertop .profileimg::after {
+  box-sizing: content-box;
+  padding: 3px;
+  position: absolute;
+  z-index: -1;
+  top: -3px;
+  left: -3px;
+  right: 0;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: block;
+  content: "";
+  background: linear-gradient(-90deg, #ef9f48 0%, #f37646 100%);
+}
+body.flx .section.profile .profileCat {
+  background: #141414;
+  height: auto;
+  overflow: auto;
+  margin-top: 30px;
+  width: 100%;
+}
+body.flx .section.profile .profileCat .active {
+  border-bottom: 1px solid rgba(239, 159, 72, 0.3);
+  color: #ef9f48;
+}
+body.flx .section.profile .profileCat span {
+  border-bottom: 1px solid transparent;
+  width: 33.3333333333%;
+  display: block;
+  color: #a4a6ac;
+  font-size: 10px;
+  text-align: center;
+  float: left;
+  font-weight: 600;
+  padding: 5px;
+}
 body.flx .section.login {
   text-align: center;
   overflow: visible;
@@ -3213,6 +3311,17 @@ body.flx .section .inputContainer.submit::before {
   background: #141414;
   position: absolute;
 }
+body.flx .section .inputContainer.static {
+  border-radius: 0;
+}
+body.flx .section .inputContainer.static .inputwrapper {
+  background: #000;
+}
+body.flx .section .inputContainer.static .inputwrapper input {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
 body.flx .section .inputContainer {
   position: relative;
   width: 300px;
@@ -3400,18 +3509,23 @@ body.flx .section .title-layout {
   padding: 10px 5px 0 5px;
   margin-bottom: 10px;
 }
+body.flx .section .title-layout:hover::-webkit-scrollbar-thumb {
+  background: rgba(239, 159, 72, 0.8);
+}
 body.flx .section .title-layout::-webkit-scrollbar {
   display: block;
   background: none;
   width: 0px;
-  height: 5px;
+  height: 3px;
+  cursor: pointer;
 }
 body.flx .section .title-layout::-webkit-scrollbar-track {
   display: none;
 }
 body.flx .section .title-layout::-webkit-scrollbar-thumb {
-  background: #ef9f48;
+  background: rgba(239, 159, 72, 0.2);
   border-radius: 3px;
+  cursor: pointer;
 }
 body.flx .section .title-layout::-webkit-scrollbar-track-piece {
   display: block;

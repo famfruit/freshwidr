@@ -16,6 +16,7 @@
       $this->password = isset($_POST['password']) ? $_POST['password'] : null;
       $this->typeCat = isset($_GET['c']) ? $_GET['c'] : null;
       $this->dateCreated = date("Y-m-d H:i:s");
+      $this->profilePage = isset($_GET['profile']) ? $_GET['profile'] : null;
       # i = initial setup, not yet registered or logged in
       $this->authPage = isset($_POST['i']) ? $_POST['i'] : null;
       $this->loginCookie = isset($_COOKIE['sessionSettings']) ? $_COOKIE['sessionSettings'] : null;
@@ -143,7 +144,7 @@
       #$sql = "SELECT * FROM movies WHERE title LIKE '%$string%' UNION SELECT * FROM series WHERE title LIKE '%$string%'";
       #$sql = "SELECT * FROM tutorial WHERE MATCH (title) AGAINST ('$string' IN NATURAL LANGUAGE MODE)";
       #$sql = "SELECT *, 'film' as moviedb FROM movies WHERE title LIKE '%$string%' UNION SELECT *, 'serie' as moviedb FROM series WHERE title LIKE '%$string%'";
-      
+
 
       $sql = "SELECT *, 'serie' as moviedb FROM series WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) UNION SELECT *, 'film' as moviedb FROM movies WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) LIMIT 100";
       $result = mysqli_query($this->con, $sql);
