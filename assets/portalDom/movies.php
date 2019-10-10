@@ -56,7 +56,7 @@
     ?>
     <div class="section all fixedcat">
       <div class="catselect">
-        <h1>Filmer</h1>
+        <h1></h1>
         <div class="catselecth">
 
           <span class="genreselect">
@@ -64,7 +64,7 @@
                 if(isset($main->typeCat)){
                   echo ucfirst($main->getSingleGenre());
                 } else {
-                  echo "Alla";
+                  echo "Välj kategori";
                 }
               ?>
           </span>
@@ -81,6 +81,23 @@
             ?>
 
           </div>
+        </div>
+        <div class="letters">
+          <span>A</span>
+          <span>B</span>
+          <span>C</span>
+          <span>D</span>
+          <span>E</span>
+          <span>F</span>
+          <span>G</span>
+          <span>H</span>
+          <span>I</span>
+          <span>J</span>
+          <span>K</span>
+          <span>L</span>
+          <span>M</span>
+          <span>N</span>
+          <span>O</span>
         </div>
       </div>
 
@@ -103,9 +120,9 @@
       <?php
     } else if(!isset($main->typeCat)) {
       ?>
-      <span class="small" style="display: block; width: 100%; margin: 5px 0 10px 0">Alla Serier</span>
+      <span class="small" style="display: block; width: 100%; margin: 5px 0 10px 0">Alla filmer</span>
       <?php
-      $result = $main->getFromMysql("SELECT * FROM movies ORDER BY releasedate DESC LIMIT 20");
+      $result = $main->getFromMysql("SELECT * FROM movies ORDER BY releasedate DESC LIMIT 16");
       if($result->num_rows > 0){
         while($row = mysqli_fetch_assoc($result)){
           $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];

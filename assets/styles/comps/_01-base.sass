@@ -283,13 +283,29 @@ body.flx
 
       .catselecth
         display: inline-block
-        position: absolute
+        position: relative
         top: 17px
-        left: 15px
-        width: calc(100% - 15px)
+        left: 0px
+        width: 220px
+      .letters
+        display: inline-block
+        top: 15px
+        left: 20px
+        position: relative
+        span
+          cursor: pointer
+          color: $flxLinFirst
+          font-size: 12px
+          font-weight: 600
+          border-right: 1px solid #000
+          padding: 5px 15px 5px 15px
+          margin: 0
+
+          &:hover
+            background: $flxNav
       .genreselect
         width: 218px
-        left: 80px
+        left: 0px
         top: 0
         display: inline-block
         font-size: 16px
@@ -310,7 +326,7 @@ body.flx
           font-family: 'Font Awesome 5 Free'
       .genreselect.down
         width: 218px
-        left: 80px
+        left: 0px
         top: 0
         display: inline-block
         font-size: 16px
@@ -342,8 +358,8 @@ body.flx
         border-bottom: 0
         border-top: 0
         position: absolute
-        top: 40px
-        left: -7px
+        top: 38px
+        left: 0px
         right: initial
         width: 100%
         z-index: 99

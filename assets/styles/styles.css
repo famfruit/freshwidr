@@ -2617,14 +2617,32 @@ body.flx .section.all.fixedcat .catselect h1 {
 }
 body.flx .section.all.fixedcat .catselect .catselecth {
   display: inline-block;
-  position: absolute;
+  position: relative;
   top: 17px;
-  left: 15px;
-  width: calc(100% - 15px);
+  left: 0px;
+  width: 220px;
+}
+body.flx .section.all.fixedcat .catselect .letters {
+  display: inline-block;
+  top: 15px;
+  left: 20px;
+  position: relative;
+}
+body.flx .section.all.fixedcat .catselect .letters span {
+  cursor: pointer;
+  color: #ef9f48;
+  font-size: 12px;
+  font-weight: 600;
+  border-right: 1px solid #000;
+  padding: 5px 15px 5px 15px;
+  margin: 0;
+}
+body.flx .section.all.fixedcat .catselect .letters span:hover {
+  background: #141414;
 }
 body.flx .section.all.fixedcat .catselect .genreselect {
   width: 218px;
-  left: 80px;
+  left: 0px;
   top: 0;
   display: inline-block;
   font-size: 16px;
@@ -2647,7 +2665,7 @@ body.flx .section.all.fixedcat .catselect .genreselect::before {
 }
 body.flx .section.all.fixedcat .catselect .genreselect.down {
   width: 218px;
-  left: 80px;
+  left: 0px;
   top: 0;
   display: inline-block;
   font-size: 16px;
@@ -2682,8 +2700,8 @@ body.flx .section.all.fixedcat .catselect .genreholder {
   border-bottom: 0;
   border-top: 0;
   position: absolute;
-  top: 40px;
-  left: -7px;
+  top: 38px;
+  left: 0px;
   right: initial;
   width: 100%;
   z-index: 99;
