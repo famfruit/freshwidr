@@ -33,14 +33,12 @@
           $trailerTag = 'tv';
           $atg = 'serie';
         }
-        var_dump($atg);
         $vidID = $data['results'][0]['id'];
         $vidData = "http://api.themoviedb.org/3/".$trailerTag."/".$vidID."/videos?api_key=".$main->key;
-        var_Dump($vidData);
+
         $header = $data['results'][0]['backdrop_path'];
         $vd = json_decode(file_get_contents($vidData),true);
 
-        var_dump($vd);
 
       ?>
       <div class="section recom">

@@ -828,6 +828,9 @@ body .fsz {
   }
 }
 @media only screen and (min-width: 1024px) {
+  body.flx div.section.profile {
+    width: 768px;
+  }
   body.flx div.section.all a {
     padding: 5px 5px 45px 5px;
     width: 170px;
@@ -2747,6 +2750,7 @@ body.flx .section.prflContent .inputContainer.static .buttons .btnh span {
 body.flx .section.profile .usertop {
   width: 100%;
   height: auto;
+  padding: 20px 0 100px 0;
   overflow: auto;
   text-align: center;
 }
