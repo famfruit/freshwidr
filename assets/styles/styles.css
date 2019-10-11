@@ -2579,7 +2579,170 @@ body.flx span.small a {
   text-decoration: none;
 }
 body.flx .section.prflContent {
+  padding: 40px 0 0 0;
+}
+body.flx .section.prflContent .refhistory {
+  padding: 40px 0 40px 0;
+}
+body.flx .section.prflContent .refhistory .off tr td {
+  color: rgba(164, 166, 172, 0.3);
+}
+body.flx .section.prflContent .refhistory .off tr .key {
+  color: rgba(164, 166, 172, 0.3);
+}
+body.flx .section.prflContent .refhistory table {
+  width: 100%;
+}
+body.flx .section.prflContent .refhistory table tr {
+  width: 100%;
+  background: #141414;
+  border: 1px solid #000;
+}
+body.flx .section.prflContent .refhistory table tr .key {
+  color: #ef9f48;
+}
+body.flx .section.prflContent .refhistory table tr .off {
+  padding-left: 30px;
+  text-align: left;
+}
+body.flx .section.prflContent .refhistory table tr .off::before {
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  margin: 0 auto;
+  content: "";
+  width: 10px;
+  display: block;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(164, 166, 172, 0.3);
+}
+body.flx .section.prflContent .refhistory table tr .on {
+  padding-left: 30px;
+  text-align: left;
+}
+body.flx .section.prflContent .refhistory table tr .on::before {
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  margin: 0 auto;
+  content: "";
+  width: 10px;
+  display: block;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(-90deg, #ef9f48 0%, #f37646 100%);
+}
+body.flx .section.prflContent .refhistory table tr td {
+  padding: 5px;
+  text-align: center;
+  font-weight: 600;
+  width: 33%;
+  font-size: 12px;
+  position: relative;
+  color: #a4a6ac;
+}
+body.flx .section.prflContent .hdnlink {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.64);
+  margin-bottom: 30px;
+}
+body.flx .section.prflContent .hdnlink span {
+  display: inline-block;
+  margin: 0 auto;
+  background: #141414;
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 7px 20px 7px 20px;
+  width: auto;
+  font-weight: 400;
+  color: #ef9f48;
+  font-size: 12px;
+}
+body.flx .section.prflContent .hdnlink p {
+  color: rgba(164, 166, 172, 0.7);
+  font-size: 10px;
+  font-weight: 400;
+}
+body.flx .section.prflContent .round {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(-90deg, #ef9f48 0%, #f37646 100%);
+  border: 2px solid #000;
+  box-shadow: 0px 0px 50px 0px rgba(239, 159, 72, 0.1);
+  margin: 0 auto;
+  margin-top: 50px;
+}
+body.flx .section.prflContent .round span {
+  font-size: 5em;
+  display: block;
+  text-align: center;
+  margin: 0;
+  font-weight: 900;
   padding: 0;
+}
+body.flx .section.prflContent .round span strong {
+  position: relative;
+  top: -20px;
+  text-transform: uppercase;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+body.flx .section.prflContent p.semi {
+  font-size: 12px;
+  padding: 0 5px 0 5px;
+  color: #a4a6ac;
+}
+body.flx .section.prflContent h2 {
+  margin: 0;
+  position: relative;
+  top: 0px;
+  left: 5px;
+  color: #ef9f48;
+  font-size: 14px;
+  display: inline-block;
+}
+body.flx .section.prflContent .inputContainer.static .buttons.vis {
+  max-height: 400px;
+  opacity: 1;
+  padding-top: 15px;
+  overflow: visible;
+  transition: all 0.12s ease;
+}
+body.flx .section.prflContent .inputContainer.static .buttons {
+  transition: all 0.12s ease;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  width: calc(60% + 2%);
+  float: right;
+}
+body.flx .section.prflContent .inputContainer.static .buttons .btnh {
+  text-align: center;
+  width: 50%;
+  float: left;
+  display: block;
+  padding: 4%;
+}
+body.flx .section.prflContent .inputContainer.static .buttons .btnh .res {
+  background: #f05454;
+  color: #121111;
+}
+body.flx .section.prflContent .inputContainer.static .buttons .btnh span {
+  background: #141414;
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 7px;
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  color: #ef9f48;
+  font-size: 12px;
 }
 body.flx .section.profile .usertop {
   width: 100%;
@@ -2658,6 +2821,7 @@ body.flx .section.profile .profileCat {
   background: #141414;
   height: auto;
   overflow: auto;
+  margin: 0 auto;
   margin-top: 30px;
   width: 100%;
 }
@@ -2667,7 +2831,7 @@ body.flx .section.profile .profileCat .active {
 }
 body.flx .section.profile .profileCat span {
   border-bottom: 1px solid transparent;
-  width: 33.3333333333%;
+  width: 50%;
   display: block;
   color: #a4a6ac;
   font-size: 10px;
@@ -3313,14 +3477,72 @@ body.flx .section .inputContainer.submit::before {
 }
 body.flx .section .inputContainer.static {
   border-radius: 0;
-}
-body.flx .section .inputContainer.static .inputwrapper {
-  background: #000;
-}
-body.flx .section .inputContainer.static .inputwrapper input {
+  width: 100%;
+  padding: 20px 0 20px 0;
   background: transparent;
   border: 0;
+}
+body.flx .section .inputContainer.static .uilocked::after {
+  content: "";
+}
+body.flx .section .inputContainer.static .uiunlock::after {
+  content: "";
+}
+body.flx .section .inputContainer.static .unlockinput {
+  color: rgba(164, 166, 172, 0.5);
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  right: 10px;
+  top: -18px;
+}
+body.flx .section .inputContainer.static .unlockinput::after {
+  color: rgba(164, 166, 172, 0.8);
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+  font-family: "Font Awesome 5 Free";
+}
+body.flx .section .inputContainer.static .inputwrapper {
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  border-bottom: 1px solid #121111;
+}
+body.flx .section .inputContainer.static .inputwrapper .showbtn.on {
+  color: #ef9f48;
+}
+body.flx .section .inputContainer.static .inputwrapper .showbtn {
+  position: absolute;
+  width: auto;
+  display: inline-block;
+  z-index: 2;
+  color: rgba(239, 159, 72, 0.5);
+  padding: 7px;
+  left: calc(40% - 40px);
+}
+body.flx .section .inputContainer.static .inputwrapper .showbtn::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-size: 16px;
+}
+body.flx .section .inputContainer.static .inputwrapper span {
+  padding: 13px 30px 13px 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #141414;
+  width: 40%;
+  color: rgba(239, 159, 72, 0.6);
+}
+body.flx .section .inputContainer.static .inputwrapper input {
+  width: 60%;
+  float: right;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 13px 0 13px 15px;
+  border: 0;
   border-radius: 0;
+  color: #a4a6ac;
 }
 body.flx .section .inputContainer {
   position: relative;

@@ -18,7 +18,43 @@ window.onload = function () {
   $('.trailer_video').addClass('fadein')
   $('.spotlog').addClass('tuck')
  }
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
+
+    $('.unlockinput').click(function(){
+      $('.buttons').toggleClass('vis')
+      if($(this).hasClass('uilocked')){
+        // Unlock
+        inputs = $(this).parent().find('input').removeAttr('readonly')
+        $(this).removeClass('uilocked').addClass('uiunlock')
+        // Show btns
+      } else {
+        inputs = $(this).parent().find('input').attr('readonly', 'readyonly')
+        $(this).removeClass('uiunlock').addClass('uilocked')
+        // Hide btns
+      }
+    })
+    $('.shbtnfpw').click(function(){
+      attr = $(this).next().attr('type')
+      $(this).toggleClass('on')
+      if(attr != 'password'){
+        $(this).next().attr('type', 'password')
+      } else {
+
+        $(this).next().attr('type', 'text')
+      }
+    })
+
+
+
   $('.genreselect').click(function(){
     $(this).toggleClass('down')
     $('.genreholder').toggleClass('vis')
