@@ -29,6 +29,21 @@ window.onload = function () {
 
 $(document).ready(function(){
 
+
+    $('.cnfChanges').click(function(){
+        confirm = confirm("Vill du verkligen ändra dina inställningar?")
+        if(confirm == true){
+          // Do changes here
+          inputs = $('.inputContainer.static').find('input')
+          console.log(inputs)
+          username = inputs[0].value
+          email = inputs[1].value
+          password = inputs[2].value
+        } else {
+          location.reload()
+        }
+    })
+
     $('.unlockinput').click(function(){
       $('.buttons').toggleClass('vis')
       if($(this).hasClass('uilocked')){

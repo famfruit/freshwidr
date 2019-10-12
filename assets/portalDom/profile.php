@@ -97,7 +97,7 @@
 
           <div class="buttons">
             <div class="btnh">
-              <span class="button">Verkställ</span>
+              <span class="button cnfChanges">Verkställ</span>
             </div>
             <div class="btnh">
               <span class="button res">Avbryt</span>
