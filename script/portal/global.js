@@ -39,6 +39,7 @@ $(document).ready(function(){
           username = inputs[0].value
           email = inputs[1].value
           password = inputs[2].value
+          // kdl
         } else {
           location.reload()
         }
