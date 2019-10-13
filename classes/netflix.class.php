@@ -22,6 +22,9 @@
       $this->loginCookie = isset($_COOKIE['sessionSettings']) ? $_COOKIE['sessionSettings'] : null;
       $this->logout = isset($_GET['logout']) ? $_GET['logout'] : null;
       $this->decodedUser = json_decode($this->loginCookie, true);
+      $this->userChangeSet = isset($_POST['userChangeSet']) ? $_POST['userChangeSet'] : null;
+      $this->userChangeInfo = isset($_POST['userChangeInfo']) ? $_POST['userChangeInfo'] : null;
+
       $this->genres = array(
         "action" => 28,
         "animerad" => 16,
@@ -44,6 +47,7 @@
         "äventyr" => 12
       );
     }
+
     public function buildDatabase($title){
       $data = json_decode(file_get_contents($this->api."&query=".$title."&language=sv",true), true);
       if($data){
@@ -256,5 +260,18 @@
           $sql = "SELECT *, 'movies' as mc FROM movies WHERE genre LIKE '%$cat%' UNION SELECT *, 'series' as mc FROM series WHERE genre LIKE '%$cat%' ORDER BY releasedate DESC LIMIT 1";
           $result = $this->getFromMysql($sql);
           return $result;
+    }
+
+    public function changeUser(){
+      var_dump($this->userChangeInfo);
+      $email = $this->userChangeInfo[1];
+      $password = password_hash($this->userChangeInfo[2], PASSWORD_DEFAULT);
+      $id = (int)$this->userChangeInfo[3];
+      $sql = "UPDATE clients SET password = '$password', email = '$email' WHERE id = $id";
+      if(mysqli_query($this->con, $sql)){
+        return true;
+      } else {
+        return false;
+      }
     }
   }

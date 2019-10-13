@@ -10,6 +10,8 @@
 
 <?php
   if($main->profilePage == 'overview'){
+    $profile = json_decode($main->loginCookie, true);
+    var_dump($profile['id']);
 
     ?>
     <div class="profileCat">
@@ -82,7 +84,7 @@
         <div class="inputContainer static">
           <span class="unlockinput uilocked">Lås upp</span>
           <div class="inputwrapper">
-            <input class="input usr"  type="text" name="username" value="admin" readonly="readonly">
+            <input class="input usr" id="keepthis" type="text" name="username" value="admin" readonly="readonly">
             <span class="lbl">Användarnamn</span>
           </div>
           <div class="inputwrapper">
@@ -97,7 +99,7 @@
 
           <div class="buttons">
             <div class="btnh">
-              <span class="button cnfChanges">Verkställ</span>
+              <span class="button cnfChanges" data-userid="1">Verkställ</span>
             </div>
             <div class="btnh">
               <span class="button res">Avbryt</span>

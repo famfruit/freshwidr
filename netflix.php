@@ -32,6 +32,11 @@ function autoLoadClasses($className){
       exit;
     }
   }
+  if(isset($main->userChangeSet)){
+    $main->changeUser();
+    
+    exit;
+  }
 
  ?>
 <!DOCTYPE html>

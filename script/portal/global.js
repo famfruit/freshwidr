@@ -31,18 +31,31 @@ $(document).ready(function(){
 
 
     $('.cnfChanges').click(function(){
+      inputs = $('.inputContainer.static').find('input')
+      console.log(inputs)
+      username = inputs[0].value
+      email = inputs[1].value
+      password = inputs[2].value
+      id = $(this)[0].dataset.userid
+      if(!username || !email || !password){
+        alert("Fyll i alla rutorna!")
+     } else {
         confirm = confirm("Vill du verkligen ändra dina inställningar?")
         if(confirm == true){
           // Do changes here
-          inputs = $('.inputContainer.static').find('input')
-          console.log(inputs)
-          username = inputs[0].value
-          email = inputs[1].value
-          password = inputs[2].value
+          userinfo = [username, email, password, id]
+          $.ajax({
+            type: "POST",
+            data: {userChangeSet: true, userChangeInfo:userinfo},
+            success: function(data){
+              console.log(data)
+            }
+          })
           // kdl
         } else {
           location.reload()
         }
+      }
     })
 
     $('.unlockinput').click(function(){
@@ -51,10 +64,12 @@ $(document).ready(function(){
         // Unlock
         inputs = $(this).parent().find('input').removeAttr('readonly')
         $(this).removeClass('uilocked').addClass('uiunlock')
+        $('#keepthis').attr('readonly', 'readonly')
         // Show btns
       } else {
         inputs = $(this).parent().find('input').attr('readonly', 'readyonly')
         $(this).removeClass('uiunlock').addClass('uilocked')
+        $('#keepthis').attr('readonly', 'readonly')
         // Hide btns
       }
     })
