@@ -46,7 +46,7 @@
 
         <div class="recomContent">
           <?php
-          if($vd['results']){
+          if(sizeOf($vd['results']) != 0){
             ?>
             <div class="recVid">
               <div id="playerWrap">
@@ -59,36 +59,60 @@
                 ></iframe>
               </div>
             </div>
+            <script>
+            var playerFrame = document.currentScript.previousElementSibling.children[0].children[0];
+
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+              player = new YT.Player(playerFrame, {
+                videoId: 'M7lc1UVf-VE',
+                events: {
+                  'onReady': onPlayerReady,
+                  'onStateChange': onPlayerStateChange,
+                  'onError': function(errEvent) {
+                      var errCode = errEvent.data;
+                      console.log(errCode)
+                      if(errCode == 100) {
+                          //
+                          console.log('Show wallpaper instead')
+                      } else if (errCode == 150){
+                          img = $('.overlay').css('background-image')
+
+                          console.log(img, 'Show wallpaper instead')
+                      }
+                  }
+                }
+              });
+            }
+            function onPlayerReady(){
+            }
+            var ll = document.getElementById("playerWrap").classList;
+            function onPlayerStateChange(event) {
+              if (event.data == YT.PlayerState.ENDED) {
+                  document.getElementById("playerWrap").classList.add("shown");
+              }
+            }
+
+            </script>
             <?php
           } else {
+            ## Load wallpaper into recvid
+            ?>
+            <div class="recVid">
+              <div id="playerWrap">
+                <img src="<?php echo 'https://image.tmdb.org/t/p/w780'.$header; ?>" alt="">
+              </div>
+            </div>
+            <?php
           }
 
            ?>
-        <script>
-        var playerFrame = document.currentScript.previousElementSibling.children[0].children[0];
 
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player(playerFrame, {
-            videoId: 'M7lc1UVf-VE',
-            events: {
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        }
-        var ll = document.getElementById("playerWrap").classList;
-        function onPlayerStateChange(event) {
-          if (event.data == YT.PlayerState.ENDED) {
-              document.getElementById("playerWrap").classList.add("shown");
-          }
-        }
-
-        </script>
 
         <div class="info">
 

@@ -19,6 +19,8 @@
             $main->setLatestId($row, "movie");
             $main->increaseView($row['id'], "movies");
             $source = json_decode($row['source'], true)['source'];
+            $rawgenre = $row['genre'];
+            $rawtype = "movie";
             ?>
             <div class="section player">
               <div class="videopl">
@@ -41,7 +43,7 @@
               </div>
             </div>
             <?php
-            include_once 'assets/portalDom/watched.php';
+            include_once 'assets/portalDom/similar_block.php';
           }
 
         }
@@ -103,7 +105,8 @@
 
     <?php
     if(isset($main->typeCat)){
-        $sql = "SELECT * FROM movies WHERE genre LIKE '%$main->typeCat%' ORDER BY title ASC";
+        ## REPLACE MOVIE_TEST
+        $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' ORDER BY title ASC LIMIT 20";
         $result = $main->getFromMysql($sql);
         while($row = mysqli_fetch_assoc($result)){
           $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];

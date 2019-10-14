@@ -716,7 +716,7 @@ body .fsz {
 }
 @media only screen and (min-width: 1440px) {
   body.flx div.section.player div.videopl iframe {
-    min-height: 80vh !important;
+    min-height: 100vh !important;
   }
   body.flx div.pcnav div.navcontent {
     width: 50% !important;
@@ -855,6 +855,9 @@ body .fsz {
   }
 }
 @media only screen and (min-width: 1024px) {
+  body.flx div.section.last.similar {
+    width: 1024px;
+  }
   body.flx div.section.profile {
     width: 768px;
   }
@@ -872,8 +875,12 @@ body .fsz {
   body.flx div.section.all a div.block h1 {
     top: 225px;
   }
+  body.flx div.section.player div.mediainformation {
+    width: 1024px;
+    margin-top: 50px;
+  }
   body.flx div.section.player div.videopl iframe {
-    min-height: 70vh;
+    min-height: 100vh;
   }
   body.flx div.pcnav div.navcontent {
     width: 70%;

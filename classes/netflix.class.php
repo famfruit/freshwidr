@@ -136,6 +136,7 @@
     public function compileGenres($array){
       $returnString = "";
       $array = json_decode($array, true);
+      # Returns null if the serie/movie dont have GENRES SET
       foreach($array as $k => $v){
           // 28
           foreach($this->genres as $i => $y){

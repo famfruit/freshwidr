@@ -360,42 +360,100 @@ Homepage
 
 
 
-Hejsan!
-
-Jag fick höra av min far att ni möjligtvis behövde hjälp med media och webbutveckling.
-Det jag är duktig på är väl allt inom webbutveckling, men jag har ett stort intresse för funktionell programmering.
-
-Tidigare erfarenheter:
-  Bokningssystem
-  Partnerhemsidor
-  Webbshoppar
-  Streaming platform
-  Bitcoinplånbok
-  Kontrollpaneler
-  Statistik
-  10+ Designs för Hemsidor/Banners/Emails
-  Innehållshanteringssystem
-  APIs
-  Python Bottar
-
-
-Allt jag har byggt är givetvis egetkodat utan några färdigmallar eller dylikt.
-För några år sedan började jag dyka in i ämnet datorkunskap och har sedan dess lärt mig en rad olika funktionella språk som C#, Python, Ruby, Javascript, Node.
-
-Vore kul att höra vad ni behöver hjälp med.
-
-Mvh,
-Ludwig Eriksson
 
 
 
 
 
-Jag började i diverse program såsom Photoshop, 3dmax studio, after effects för bild/video-redigering men det övergick väldigt fort till
-att jag började koda mina egna hemsidor där jag kunde applicera allt jag lärt mig tidigare.
-
-Dagens hemsidor har blivit väldigt mer komplicerade än de var när jag började i Adobe Dreamweaver och innefattar en rad olika funktionella programmeringsspråk
 
 
 
-Under de senaste åren har jag fokuserat på funktionella programmeringsspråk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ###############
+  Profile
+    # Top userstuff
+      Implement badges of some sort
+      Point system ?
+    # Invites
+      /Round button klick
+        /Generate key and hooks the user to it
+        /When done, display ".hdnlnk" with the contents
+      Ref History
+        /Sort by status
+        /Display as shown in template
+    # Settings
+      /Avbryt
+        /location.reload()
+      /Confirm
+        /Prompt alert, are you sure?
+        /Change all the inputs in sql
+
+  Homepage
+    Horizontal scrollbars / c00l pagination.
+    midRecom RESPONSIVE fix
+    More cookiework to display Most like genres
+      Maybe implement something to see if the user likes new or old content, sort according
+
+  Series&Movies
+    A-Z 0-9 Sorting
+
+  Series
+    Better design for episodes / seasons
+
+  Invites page
+    Where you sign shit up with a valid id
+
+
+
+#/ Sort JS scripts for the right pages
+
+
+
+
+
+
+
+
+
+Kort = 100px
+Padding = 50px
+20 Kort
+  3000px
+
+
+  Max = 3000px
+  Min = 0
+
+  Right = 0 = All the way to the left
+  Right = 3000px = All the way to the right
+
+Click =>
+  Get atttribute right & left
+  if(right || left > max OR min):
+    pass
+  elif:
+    if(left):
+      right: -150px
+    elif(right)
+      right: 150px
