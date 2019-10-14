@@ -303,9 +303,14 @@ body.flx
             font-size: 12px
             position: relative
             color: $flxGreyCol
+    .hdnlink.vis
+      display: block
+      opacity: 1
     .hdnlink
+      opacity: 0
       width: 100%
       margin: 0 auto
+      display: none
       text-align: center
       padding: 30px 0 40px 0
       border-bottom: 1px solid rgba(#000000, 0.64)
@@ -325,6 +330,66 @@ body.flx
         color: rgba($flxGreyCol, 0.7)
         font-size: 10px
         font-weight: 400
+    .btnhloader.vis
+      animation: spinLoaderFrame .3s ease
+      display: block
+      transform: rotateY(0deg)
+      .lpos
+        bottom: -10px
+        opacity: 1
+    .btnhloader
+      display: block
+      background-image: url('../../assets/img/animlogo.gif')
+      background-size: 70% 70%
+      background-repeat: no-repeat
+      background-position: center 50%
+      background-color: $flxBody
+      width: 151px
+      height: 151px
+      border-radius: 50%
+      transform: rotateY(90deg)
+      position: absolute
+      transition: all 1s ease
+      left: 0
+      right: 0
+      display: none
+      margin: 0 auto
+      z-index: 99
+      top: 50px
+      .lpos
+        display: block
+        margin: 0 auto
+        text-align: center
+        position: absolute
+        bottom: -50px
+        left: 0
+        opacity: 0
+        right: 0
+        transition: all 11s ease
+
+        span
+          color: $flxGreyCol
+          font-size: 10px
+          font-weight: 900
+          text-align: center
+          display: block
+          width: 100%
+          div
+            color: $flxGreyCol
+            display: inline
+          #d1
+            margin-left: 2px
+            animation: dot .9s infinite
+            animation-delay: 0
+          #d2
+            animation: dot .9s infinite
+            animation-delay: .3s
+          #d3
+            animation: dot .9s infinite
+            animation-delay: .6s
+    .round.load
+      animation: spinMainFrame .3s ease
+      transform: rotateY(90deg)
     .round
       width: 150px
       height: 150px
@@ -333,7 +398,31 @@ body.flx
       border: 2px solid #000
       box-shadow: 0px 0px 50px 0px rgba($flxLinFirst, 0.1)
       margin: 0 auto
-      margin-top: 50px
+      margin-top: 20px
+      margin-bottom: 50px
+      cursor: pointer
+      position: relative
+      transition: all .15s ease
+      z-index: 44
+      perspective: 150px
+      transform: rotateY(0deg)
+      &:hover
+          box-shadow: 0px 0px 70px -10px rgba($flxLinFirst, 0.5)
+          transition: all .15s ease
+          &::before
+            display: none
+            bottom: 20px
+      &::before
+        transition: all .5s ease
+        display: none
+        content: 'Generera..'
+        color: rgba(#000, 1)
+        text-transform: uppercase
+        font-size: 11px
+        position: absolute
+        bottom: -20px
+        text-align: center
+        width: 100%
       span
         font-size: 5em
         display: block
@@ -341,6 +430,8 @@ body.flx
         margin: 0
         font-weight: 900
         padding: 0
+        position: relative
+        top: 0px
         strong
           position: relative
           top: -20px
@@ -390,6 +481,7 @@ body.flx
             border-radius: 3px
             padding: 7px
             display: block
+            cursor: pointer
             width: 100%
             font-weight: 600
             color: $flxLinFirst
@@ -1053,6 +1145,7 @@ body.flx
         font-weight: 600
         position: absolute
         right: 10px
+        cursor: pointer
         top: -18px
         &::after
           color: rgba($flxGreyCol, .8)
@@ -1068,6 +1161,7 @@ body.flx
         .showbtn.on
           color: rgba($flxLinFirst, 1)
         .showbtn
+          cursor: pointer
           position: absolute
           width: auto
           display: inline-block

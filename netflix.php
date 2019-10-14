@@ -34,7 +34,10 @@ function autoLoadClasses($className){
   }
   if(isset($main->userChangeSet)){
     $main->changeUser();
-    
+    exit;
+  }
+  if(isset($main->generateInvite)){
+    $main->generateKey();
     exit;
   }
 

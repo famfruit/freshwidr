@@ -24,7 +24,7 @@
       $this->decodedUser = json_decode($this->loginCookie, true);
       $this->userChangeSet = isset($_POST['userChangeSet']) ? $_POST['userChangeSet'] : null;
       $this->userChangeInfo = isset($_POST['userChangeInfo']) ? $_POST['userChangeInfo'] : null;
-
+      $this->generateInvite = isset($_POST['generateInvite']) ? $_POST['generateInvite'] : null;
       $this->genres = array(
         "action" => 28,
         "animerad" => 16,
@@ -48,6 +48,15 @@
       );
     }
 
+    public function randomString($num){
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $num; $i++) {
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
+    }
     public function buildDatabase($title){
       $data = json_decode(file_get_contents($this->api."&query=".$title."&language=sv",true), true);
       if($data){
@@ -201,7 +210,7 @@
             echo "503";
             return false;
           } else {
-            $userArray = json_encode(array("id" => $row['id'], "username" => $row['name']));
+            $userArray = json_encode(array("id" => $row['id'], "username" => $row['name'], "ecpw" => $this->password));
             setcookie('sessionSettings', $userArray, time() + (86400 * 30), "/");
             echo "true";
             exit;
@@ -269,9 +278,52 @@
       $id = (int)$this->userChangeInfo[3];
       $sql = "UPDATE clients SET password = '$password', email = '$email' WHERE id = $id";
       if(mysqli_query($this->con, $sql)){
+        $cookie = json_decode($this->loginCookie, true);
+        $cookie['ecpw'] = $this->userChangeInfo[2];
+        var_dump($cookie);
+        $cookie = json_encode($cookie);
+        setcookie('sessionSettings', $cookie, time() + (86400 * 30), "/");
+
         return true;
       } else {
         return false;
+      }
+    }
+    public function generateKey(){
+      ## Dubblecheck if the user has invites left
+      ## if so, consume one and make it
+      ## return true
+      $cookie = json_decode($this->loginCookie, true);
+      $id = (int)$cookie['id'];
+      $sql = "SELECT * FROM clients WHERE id = $id";
+      $result = $this->getFromMysql($sql);
+      while($row = mysqli_fetch_assoc($result)){
+          $invite = $row['invites'];
+          if($invite != 0){
+            $newinvite = $invite - 1;
+            $vkey = $this->randomString(15);
+            $ref = $cookie['username'];
+            $thedate = date("Y-m-d H:i:s");
+            $sql = "INSERT INTO invites (vkey, status, ref, date, completed, reguser) VALUES ('$vkey', 0,'$ref','$thedate', '0', '')";
+            mysqli_query($this->con, $sql);
+
+
+            $sql = "UPDATE clients SET invites = $newinvite WHERE id = $id";
+            mysqli_query($this->con, $sql);
+
+
+            $returnArray = array(
+              "invitesLeft" => $newinvite,
+              "vkey" => $vkey,
+              "date" => $thedate,
+              "status" => 0
+            );
+            echo json_encode($returnArray);
+            return true;
+          } else {
+            echo "404";
+            return false;
+          }
       }
     }
   }

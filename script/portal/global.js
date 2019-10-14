@@ -28,8 +28,48 @@ window.onload = function () {
 
 
 $(document).ready(function(){
+    $('.round').click(function(){
+      $(this).addClass('load')
+      $('.btnhloader').addClass('vis')
+      $('.lnk').find('strong').html('')
+      $('.disc').find('strong').html('')
+      $('.hdnlink').removeClass('vis')
+      inv = $(this)[0].dataset.dsk
+      console.log(inv)
+      if(inv == 0 || inv == '0'){
+        console.log('asd')
+        location.reload()
+      }
+      $.ajax({
+        type: "POST",
+        data: {generateInvite:true},
+        dataType: "json",
+        success: function(data){
+          setTimeout(function(){
+            if(data['vkey']){
+              $('.lnk').find('strong').html(data['vkey'])
+              $('.disc').find('strong').html(data['date'])
+              $('.hdnlink').addClass('vis')
+              $('.remaind').html(data['invitesLeft'] + '<strong>KVAR</strong>')
+            } else {
+              location.reload()
+            }
+            $('.round').removeClass('load')
+            $('.btnhloader').removeClass('vis')
+
+            // insert new table
+            body = '<table class="on"><tr><td class="status on">AKTIV</td><td class="key">'+data['vkey']+'</td><td class="date">'+data['date']+'</td></tr></table>'
+            $('.refhistory').prepend(body)
 
 
+          }, 500)
+
+        }
+      })
+    })
+    $('.res').click(function(){
+      location.reload()
+    })
     $('.cnfChanges').click(function(){
       inputs = $('.inputContainer.static').find('input')
       console.log(inputs)
@@ -48,7 +88,7 @@ $(document).ready(function(){
             type: "POST",
             data: {userChangeSet: true, userChangeInfo:userinfo},
             success: function(data){
-              console.log(data)
+              location.reload()
             }
           })
           // kdl
