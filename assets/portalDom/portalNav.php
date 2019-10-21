@@ -22,6 +22,7 @@
 
 
 <div class="pcnav">
+  <a href="?logout=t" class="logout">Logga ut</a>
   <img src="assets/img/widrblack.png" alt="">
   <div class="navcontent">
     <a href="netflix.php">

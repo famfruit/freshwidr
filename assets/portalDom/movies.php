@@ -21,15 +21,19 @@
             $source = json_decode($row['source'], true)['source'];
             $rawgenre = $row['genre'];
             $rawtype = "movie";
+            $sqlpointer = "movies";
+            var_dump($data);
             ?>
             <div class="section player">
               <div class="videopl">
                 <div class="lds-ellipsis hidden orange"><div></div><div></div><div></div><div></div></div>
+
                 <iframe id="ifrmsrc" data-ifrmsrc="<?php echo $source ?>" frameborder='0' allowfullscreen src=""></iframe>
               </div>
               <div class="mediainformation">
                 <h1><?php echo ucfirst(str_replace("-", " ", $row['title'])) ?> <strong><?php echo number_format($data['popularity'], 1) ?></strong>  </h1>
-                <span class="genre"><?php echo $genreString; ?></span>
+                <span class="genre"><i class="fas fa-theater-masks"><?php echo $genreString; ?></i></span>
+
                 <div class="desc">
                   <h2>Beskrivning</h2>
                   <?php
@@ -55,7 +59,12 @@
       }
   } else {
     include_once "assets/portalDom/spotlightHeader.php";
-    ?>
+
+      if(empty($main->typeCat)){
+        $main->typeCat = 'alla';
+      }
+
+     ?>
     <div class="section all fixedcat">
       <div class="catselect">
         <h1></h1>
@@ -72,6 +81,11 @@
           </span>
           <div class="genreholder">
             <?php
+            ?>
+            <a href="?movie=alla&c=alla">
+              <span data-cat="<?php echo "alla" ?>"><?php echo "alla"?></span>
+            </a>
+            <?php
             foreach($main->genres as $key => $value){
               ?>
               <a href="?movie=alla&c=<?php echo $value ?>">
@@ -79,34 +93,92 @@
               </a>
               <?php
             }
-
             ?>
 
           </div>
         </div>
         <div class="letters">
-          <span>A</span>
-          <span>B</span>
-          <span>C</span>
-          <span>D</span>
-          <span>E</span>
-          <span>F</span>
-          <span>G</span>
-          <span>H</span>
-          <span>I</span>
-          <span>J</span>
-          <span>K</span>
-          <span>L</span>
-          <span>M</span>
-          <span>N</span>
-          <span>O</span>
+          <?php
+          $alph = range("A", "Z");
+          foreach($alph as $key => $value){
+            ?>
+            <a href="?movie=alla&c=<?php echo $main->typeCat ?>&l=<?php echo strtolower($value); ?>&p=0"><?php echo $value?></a>
+            <?php
+          }
+          ?>
+        </div>
+        <div class="pageselect">
+
+
+
+        <a class="left" href="?movie=alla&c=<?php echo $main->typeCat ?>&l=<?php echo $main->letterCat ?>&p=<?php echo $main->typeCurPage + -1 ?>"></a>
+            <h1><?php
+                if(!isset($_GET['c'])){
+                  $sql = "SELECT * FROM movies_test WHERE status = 0";
+                } else if(empty($_GET['l'])){
+                  # See if CAT == alla
+                  if($main->typeCat == 'alla'){
+                    $sql = "SELECT * FROM movies_test WHERE status = 0";
+                  } else {
+                    $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' AND status = 0";
+                  }
+                } else {
+                  if($main->typeCat == 'alla'){
+                    $sql = "SELECT * FROM movies_test WHERE status = 0";
+                  } else {
+                    $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' AND title LIKE '$main->letterCat%' AND status = 0";
+                  }
+                }
+                $result = $main->getFromMysql($sql);
+                if(isset($main->typeCurPage)){
+                  echo $main->typeCurPage;
+                } else {
+                  echo "0";
+                }
+
+             ?></h1>
+             <span class="disclaimer">av <?php echo number_format($result->num_rows / 40, 0); ?></span>
+            <a class="right" href="?movie=alla&c=<?php echo $main->typeCat ?>&l=<?php echo $main->letterCat ?>&p=<?php echo $main->typeCurPage + 1 ?>"></a>
         </div>
       </div>
 
     <?php
-    if(isset($main->typeCat)){
+    if(isset($main->typeCat) && isset($main->letterCat)) {
+      # Pages
+
+      #
+      if(isset($main->typeCurPage)){
+        $offset = $main->typeCurPage * 40;
+      } else {
+        $offset = 0;
+      }
+      if($main->typeCat == 'alla'){
+        $sql = "SELECT * FROM movies_test WHERE title LIKE '$main->letterCat%' AND status = 0 LIMIT 40 OFFSET $offset";
+      } else {
+
+        $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' AND title LIKE '$main->letterCat%' AND status = 0 LIMIT 40 OFFSET $offset";
+      }
+      #$sql = "SELECT * FROM movies WHERE MATCH(title) AGAINST('$main->letterCat%' IN BOOLEAN MODE) LIMIT 20";
+      $result = $main->getFromMysql($sql);
+      while($row = mysqli_fetch_assoc($result)){
+        $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];
+        ?>
+        <a href="?movie=<?php echo $row['title'] ?>">
+          <div class="block" style="background-image: url(<?php echo $imgstring ?>)">
+            <h1 class="small"><?php echo ucfirst(str_replace("-", " ",$row['title']))?></h1>
+          </div>
+        </a>
+        <?php
+
+      }
+
+      } else if(isset($main->typeCat)){
         ## REPLACE MOVIE_TEST
-        $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' ORDER BY title ASC LIMIT 20";
+        if($main->typeCat == 'alla'){
+          $sql = "SELECT * FROM movies_test WHERE status = 0 ORDER BY title ASC LIMIT 40";
+        } else {
+          $sql = "SELECT * FROM movies_test WHERE genre LIKE '%$main->typeCat%' AND status = 0 ORDER BY title ASC LIMIT 40";
+        }
         $result = $main->getFromMysql($sql);
         while($row = mysqli_fetch_assoc($result)){
           $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];
@@ -121,11 +193,11 @@
         #var_dump($result);
       ?>
       <?php
-    } else if(!isset($main->typeCat)) {
+    }  else if(!isset($main->typeCat)) {
       ?>
       <span class="small" style="display: block; width: 100%; margin: 5px 0 10px 0">Alla filmer</span>
       <?php
-      $result = $main->getFromMysql("SELECT * FROM movies ORDER BY releasedate DESC LIMIT 16");
+      $result = $main->getFromMysql("SELECT * FROM movies WHERE status = 0 ORDER BY releasedate DESC LIMIT 40");
       if($result->num_rows > 0){
         while($row = mysqli_fetch_assoc($result)){
           $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];

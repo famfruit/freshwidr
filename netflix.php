@@ -20,7 +20,14 @@ function autoLoadClasses($className){
     $encodedCookie = json_encode($newArray);
     setcookie('latest', $encodedCookie, time() + (86400 * 30), "/"); // 86400 = 1 day
   }
-  #setcookie('latest', null, time() + (86400 * 30), "/"); // 86400 = 1 day
+  if(isset($main->clearCookies)){
+    setcookie('latest', '{"movie":[],"serie":[]}', time() + (86400 * 30), "/"); // 86400 = 1 day
+    header('Location: ?cookiesCleared');
+  }
+  if(isset($main->regSet)){
+    $main->registerUser();
+    exit;
+  }
   if(isset($main->loginSet)){
     $main->authenticate();
     exit;
@@ -79,32 +86,37 @@ function autoLoadClasses($className){
     </div>
 
     <?php
-      if(!isset($main->loginCookie)){
-        # Run isLoggedIn() instead of 1 != 0
-        # Did not authenticate, prompt login
-        include_once "assets/portalDom/auth.php";
+      if(isset($main->refPage)){
+        include_once "assets/portalDom/inv.php";
       } else {
-        if(isset($main->moviePage)){
-          include_once "assets/portalDom/movies.php";
-
-        } else if(isset($main->seriesPage)){
-
-          include_once "assets/portalDom/series.php";
-
-        } else if(isset($main->historyPage)){
-          include_once "assets/portalDom/spotlightHeader.php";
-          include_once "assets/portalDom/watched.php";
-        } else if(isset($main->profilePage)) {
-          include_once "assets/portalDom/profile.php";
+        if(!isset($main->loginCookie)){
+          # Run isLoggedIn() instead of 1 != 0
+          # Did not authenticate, prompt login
+          include_once "assets/portalDom/auth.php";
         } else {
-          include_once "assets/portalDom/spotlightHeader.php";
-          include_once "assets/portalDom/start.php";
-          include_once "assets/portalDom/midRecom.php";
-          include_once "assets/portalDom/watched_onerow.php";
+          if(isset($main->moviePage)){
+            include_once "assets/portalDom/movies.php";
+
+          } else if(isset($main->seriesPage)){
+
+            include_once "assets/portalDom/series.php";
+
+          } else if(isset($main->historyPage)){
+            include_once "assets/portalDom/spotlightHeader.php";
+            include_once "assets/portalDom/watched.php";
+          } else if(isset($main->profilePage)) {
+            include_once "assets/portalDom/profile.php";
+          } else {
+            include_once "assets/portalDom/spotlightHeader.php";
+            include_once "assets/portalDom/carousel.php";
+            include_once "assets/portalDom/midRecom.php";
+            include_once "assets/portalDom/widerecom.php";
+            include_once "assets/portalDom/watched_onerow.php";
+          }
+          # User is logged in, inport footer + nav
+          include_once 'assets/portalDom/footer.php';
+          include_once 'assets/portalDom/portalNav.php';
         }
-        # User is logged in, inport footer + nav
-        include_once 'assets/portalDom/footer.php';
-        include_once 'assets/portalDom/portalNav.php';
       }
 
 

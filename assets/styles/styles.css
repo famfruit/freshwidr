@@ -9,6 +9,32 @@ body .fsz {
   width: 70%;
 }
 
+@keyframes scrollbarhide {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes scrollbarpop {
+  0% {
+    display: none;
+    opacity: 1;
+  }
+  1% {
+    display: none;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
 @keyframes dot {
   0% {
     opacity: 0;
@@ -714,9 +740,297 @@ body .fsz {
     transform: translate(19px, 0);
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 425px) {
+  body.flx div.section.recom div.recomContent div.recVid {
+    height: 250px;
+    width: 100%;
+  }
+  body.flx div.section.recom div.recomContent div.recVid div#playerWrap {
+    height: 100%;
+    width: 100%;
+  }
+  body.flx div.section.recom div.recomContent div.recVid div#playerWrap iframe {
+    height: 100%;
+  }
+  body.flx div.section.header div.header div.trailer_video video {
+    width: 140%;
+    left: -20%;
+  }
+  body.flx div.section.all a {
+    width: 33.3333333333%;
+  }
+}
+@media only screen and (min-width: 535px) {
+  body.flx div.section.recom div.recomContent div.recVid {
+    height: 300px;
+  }
+  body.flx div.section.all a {
+    width: 25%;
+  }
+  body.flx div.section.all a div.block {
+    background-size: 100% 110%;
+  }
+}
+@media only screen and (min-width: 769px) {
+  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder {
+    width: 500px;
+  }
+  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder a {
+    width: 50%;
+    float: left;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: 0;
+    border-left: 0;
+  }
+  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder a span {
+    border: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body.flx {
+    padding-top: 60px;
+  }
+  body.flx div.section.recom div.recomContent div.recVid {
+    height: 360px;
+  }
+  body.flx div.section.carousel div.scroll {
+    width: 100px;
+    height: 240px;
+  }
+  body.flx div.section.carousel div.scroll::before {
+    top: 110px;
+  }
+  body.flx div.section.carousel div.scroll.scrollright::before {
+    left: 40px;
+  }
+  body.flx div.section.carousel div.scroll.scrolleft::before {
+    left: 10px;
+  }
+  body.flx div.section.carousel div.realwindow.title-layout {
+    height: 350px;
+  }
+  body.flx div.section.carousel div.realwindow.title-layout a {
+    width: 190px;
+    flex: 0 0 220px;
+  }
+  body.flx div.section.carousel div.realwindow.title-layout a div.block {
+    width: 190px;
+    height: 240px;
+  }
+  body.flx div.section.all a {
+    width: 20%;
+  }
+  body.flx div.section.all a div.block {
+    background-size: 100% 140% !important;
+  }
+  body.flx div.searchResults {
+    top: 110px;
+    border-bottom: 2px solid black;
+  }
+  body.flx div.searchBar {
+    top: 60px;
+    border-top: 2px solid black;
+  }
+  body.flx div.pcnav {
+    display: block;
+  }
+  body.flx div.portalNav {
+    display: none;
+  }
+  body.flx div.section.header {
+    min-height: 500px;
+  }
+  body.flx div.section.header div.header {
+    max-height: 650px;
+  }
+  body.flx div.section.header div.header div.trailer_video video {
+    width: 100%;
+    left: 0;
+    top: -20%;
+  }
+  body.flx div.section.header div.header div.headercontents {
+    padding: 150px 10px 100px 10px;
+    background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%);
+  }
+  body.flx div.section.header div.header img {
+    width: 100%;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body.flx div.section.recom div.recomContent {
+    width: 90%;
+    color: #fff;
+    margin: 0 auto;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+  }
+  body.flx div.section.recom div.recomContent .recVid {
+    box-shadow: 0px 50px 70px -30px #000;
+    display: inline-block;
+    height: 280px !important;
+    width: 480px !important;
+    overflow: hidden;
+    float: left;
+    opacity: 0.85;
+    max-width: 640px;
+  }
+  body.flx div.section.recom div.recomContent .info {
+    width: 45%;
+    float: right;
+    padding: 5% 2% 5% 2%;
+    border-radius: 3px;
+    position: relative;
+    background: rgba(0, 0, 0, 0);
+  }
+  body.flx div.section.recom div.recomContent .info .headerSpecs {
+    position: absolute;
+    top: 5%;
+  }
+  body.flx div.section.recom div.recomContent .info .headerSpecs i {
+    padding: 5px 20px 10px 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    float: left;
+    display: block;
+    width: 100%;
+    font-size: 10px;
+    text-transform: capitalize;
+  }
+  body.flx div.section.recom div.recomContent .info .headerSpecs i::before {
+    position: relative;
+    right: 5px;
+    font-weight: 900;
+    top: 2px;
+    font-size: 16px;
+    font-family: "Font Awesome 5 Free";
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons {
+    padding: 0;
+    position: relative;
+    top: 30px;
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons a {
+    text-decoration: none;
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons .button {
+    color: white;
+    font-size: 12px;
+    padding: 7px 10px 7px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-right: 20px;
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons .button::before {
+    margin-right: 10px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons .button.play::before {
+    content: "";
+  }
+  body.flx div.section.recom div.recomContent .info .headerbuttons .button.info::before {
+    content: "";
+  }
+  body.flx div.section.recom div.recomContent .info h1 {
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 1.5em;
+    background: none;
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+  }
+  body.flx div.section.recom div.recomContent .info p {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.48);
+    color: #d7d7d7;
+    line-height: 1.7;
+    margin-top: 0;
+    display: block;
+    margin-bottom: 10px;
+    white-space: pre-line;
+    overflow: hidden;
+    height: 9ch;
+    text-overflow: ellipsis;
+    max-width: 90ch;
+  }
+  body.flx div.section.recom div.recomContent .info .spotlog.tuck {
+    max-width: 100px;
+    top: 0;
+    transition: all 2s ease;
+    transition-delay: 2s;
+  }
+  body.flx div.section.recom div.recomContent .info img {
+    transition-delay: 2s;
+    transition: all 2s ease;
+    position: relative;
+    z-index: 0;
+    left: initial;
+    max-width: 300px;
+    top: -100px;
+    height: auto;
+  }
+  body.flx div.section.profile {
+    width: 768px;
+  }
+  body.flx div.section.all a {
+    padding: 5px 5px 45px 5px;
+    width: 170px;
+    height: 300px;
+    max-height: 300px;
+    margin-right: 4px;
+  }
+  body.flx div.section.all a div.block {
+    background-size: 170px 230px !important;
+    height: 230px;
+  }
+  body.flx div.section.all a div.block h1 {
+    top: 225px;
+  }
+  body.flx div.section.player div.mediainformation {
+    margin-top: 50px;
+  }
   body.flx div.section.player div.videopl iframe {
-    min-height: 100vh !important;
+    min-height: 94vh;
+  }
+  body.flx div.pcnav div.navcontent {
+    width: 70%;
+  }
+  body.flx div.section.header {
+    min-height: 500px;
+  }
+  body.flx div.section.header div.header {
+    max-height: 650px;
+  }
+  body.flx div.section.header div.header div.headercontents {
+    padding: 150px 10px 100px 10px;
+    background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%);
+  }
+  body.flx div.section.header div.header img {
+    width: 100%;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 1220px) {
+  body.flx div.section.recom div.recomContent div.recVid {
+    height: 335px !important;
+    width: 600px !important;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body.flx div.section.recom div.recomContent {
+    max-width: 1400px;
+  }
+  body.flx div.section.recom div.recomContent div.recVid {
+    height: 360px !important;
+    width: 640px !important;
+  }
+  body.flx div.section.player div.videopl iframe {
+    min-height: 90vh !important;
   }
   body.flx div.pcnav div.navcontent {
     width: 50% !important;
@@ -775,129 +1089,6 @@ body .fsz {
   body.flx div.section.header img {
     position: absolute;
     top: 0;
-  }
-}
-@media only screen and (min-width: 535px) {
-  body.flx div.section.all a {
-    width: 25%;
-  }
-  body.flx div.section.all a div.block {
-    background-size: 100% 110%;
-  }
-}
-@media only screen and (min-width: 425px) {
-  body.flx div.section.header div.header div.trailer_video video {
-    width: 140%;
-    left: -20%;
-  }
-  body.flx div.section.all a {
-    width: 33.3333333333%;
-  }
-}
-@media only screen and (min-width: 769px) {
-  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder {
-    width: 500px;
-  }
-  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder a {
-    width: 50%;
-    float: left;
-    padding: 5px 10px 5px 10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-top: 0;
-    border-left: 0;
-  }
-  body.flx div.section.all.fixedcat div.catselect div.catselecth div.genreholder a span {
-    border: 0;
-  }
-}
-@media only screen and (min-width: 768px) {
-  body.flx {
-    padding-top: 60px;
-  }
-  body.flx div.section.all a {
-    width: 20%;
-  }
-  body.flx div.section.all a div.block {
-    background-size: 100% 140% !important;
-  }
-  body.flx div.searchResults {
-    top: 110px;
-    border-bottom: 2px solid black;
-  }
-  body.flx div.searchBar {
-    top: 60px;
-    border-top: 2px solid black;
-  }
-  body.flx div.pcnav {
-    display: block;
-  }
-  body.flx div.portalNav {
-    display: none;
-  }
-  body.flx div.section.header {
-    min-height: 500px;
-  }
-  body.flx div.section.header div.header {
-    max-height: 650px;
-  }
-  body.flx div.section.header div.header div.trailer_video video {
-    width: 100%;
-    left: 0;
-    top: -20%;
-  }
-  body.flx div.section.header div.header div.headercontents {
-    padding: 150px 10px 100px 10px;
-    background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%);
-  }
-  body.flx div.section.header div.header img {
-    width: 100%;
-    left: 0;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  body.flx div.section.last.similar {
-    width: 1024px;
-  }
-  body.flx div.section.profile {
-    width: 768px;
-  }
-  body.flx div.section.all a {
-    padding: 5px 5px 45px 5px;
-    width: 170px;
-    height: 300px;
-    max-height: 300px;
-    margin-right: 4px;
-  }
-  body.flx div.section.all a div.block {
-    background-size: 170px 230px !important;
-    height: 230px;
-  }
-  body.flx div.section.all a div.block h1 {
-    top: 225px;
-  }
-  body.flx div.section.player div.mediainformation {
-    width: 1024px;
-    margin-top: 50px;
-  }
-  body.flx div.section.player div.videopl iframe {
-    min-height: 100vh;
-  }
-  body.flx div.pcnav div.navcontent {
-    width: 70%;
-  }
-  body.flx div.section.header {
-    min-height: 500px;
-  }
-  body.flx div.section.header div.header {
-    max-height: 650px;
-  }
-  body.flx div.section.header div.header div.headercontents {
-    padding: 150px 10px 100px 10px;
-    background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%);
-  }
-  body.flx div.section.header div.header img {
-    width: 100%;
-    left: 0;
   }
 }
 @media only screen and (max-width: 1366px) {
@@ -2335,6 +2526,10 @@ body .fsz {
     display: none;
   }
 }
+.widthWrapper {
+  width: auto;
+}
+
 #playerWrap {
   display: inline-block;
   position: relative;
@@ -2399,7 +2594,7 @@ body.flx .expanededNav {
   max-height: 1000px;
   position: fixed;
   bottom: 58px;
-  z-index: 1;
+  z-index: 55;
   height: auto;
   padding: 10px 0 0px 0;
   background: #141414;
@@ -2601,9 +2796,9 @@ body.flx p {
   color: #fff;
 }
 body.flx span.small.xxl {
-  color: #fff;
+  color: #ef9f48;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 400;
 }
 body.flx span.small {
   color: rgba(239, 159, 72, 0.8);
@@ -2617,6 +2812,58 @@ body.flx span.small a {
 }
 body.flx .section.prflContent {
   padding: 40px 0 0 0;
+}
+body.flx .section.prflContent .submbtn {
+  background: #f05454;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 7px 20px 7px 20px;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
+  font-weight: 600;
+  color: #000;
+  font-size: 12px;
+}
+body.flx .section.prflContent .newssection .textarea {
+  border-left: 1px solid rgba(239, 159, 72, 0.6);
+  padding: 2px 10px 2px 10px;
+  background: #141414;
+  margin: 5px 0 30px 0;
+}
+body.flx .section.prflContent .newssection .textarea h2 {
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 20px;
+}
+body.flx .section.prflContent .newssection .textarea .sig {
+  font-weight: 500;
+  color: #fff;
+  margin: 10px 0 10px 0;
+}
+body.flx .section.prflContent .newssection .textarea p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #a4a6ac;
+  font-weight: 500;
+  margin: 0;
+}
+body.flx .section.prflContent .newssection .textarea p strong {
+  color: #ef9f48;
+}
+body.flx .section.prflContent .newssection h2 {
+  left: 0;
+  font-size: 24px;
+}
+body.flx .section.prflContent .newssection span {
+  display: block;
+  font-size: 10px;
+  color: #a4a6ac;
+}
+body.flx .section.prflContent .newssection span strong {
+  color: #ef9f48;
 }
 body.flx .section.prflContent .refhistory {
   padding: 40px 0 40px 0;
@@ -2886,12 +3133,200 @@ body.flx .section.prflContent .inputContainer.static .buttons .btnh span {
   color: #ef9f48;
   font-size: 12px;
 }
+body.flx .section.carousel.widerecom {
+  height: auto;
+  overflow: auto;
+  padding: 100px 5px 100px 5px;
+  max-height: 1000px;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout {
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  padding-bottom: 70px;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a {
+  flex: 0 0 300px;
+  width: 250px;
+  height: 350px;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a .block {
+  width: 250px;
+  height: 350px;
+  position: relative;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a .block .headerSpecs {
+  position: absolute;
+  top: 385px;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a .block .headerSpecs i {
+  padding: 5px 20px 10px 30px;
+  font-family: "Noto Sans Sc", sans-serif;
+  color: rgba(164, 166, 172, 0.7);
+  font-weight: 500;
+  float: left;
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a .block .headerSpecs i::before {
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+  top: 2px;
+  font-size: 16px;
+  color: #ef9f48;
+  font-family: "Font Awesome 5 Free";
+}
+body.flx .section.carousel.widerecom .realwindow.title-layout a .block .small {
+  top: initial;
+  bottom: -45px;
+  position: absolute;
+}
+body.flx .section.carousel.widerecom .scroll {
+  height: 355px;
+  top: 145px;
+}
+body.flx .section.carousel.widerecom .scroll::before {
+  top: 150px;
+}
+body.flx .section.carousel {
+  width: 100%;
+  padding: 5px;
+  padding-bottom: 40px;
+}
+body.flx .section.carousel .scroll.hidden {
+  animation: scrollbarhide 1s ease;
+  display: none;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+body.flx .section.carousel .scroll {
+  animation: scrollbarpop 1s ease;
+  position: absolute;
+  width: 50px;
+  height: 180px;
+  display: block;
+  opacity: 1;
+  top: 53px;
+  z-index: 4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+body.flx .section.carousel .scroll::before {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 10px;
+  position: absolute;
+  font-size: 0.8em;
+  top: 70px;
+  font-family: "Font Awesome 5 Free";
+  border-radius: 2px;
+  border: 1px solid rgba(239, 159, 72, 0.8);
+  font-weight: 900;
+  color: #ef9f48;
+}
+body.flx .section.carousel .scroll.scrolleft {
+  background: linear-gradient(90deg, #121111 20%, rgba(0, 0, 0, 0) 100%);
+  left: 0;
+}
+body.flx .section.carousel .scroll.scrolleft::before {
+  left: 5px;
+  content: "";
+}
+body.flx .section.carousel .scroll.scrollright {
+  background: linear-gradient(-90deg, #121111 20%, rgba(0, 0, 0, 0) 100%);
+  right: 0px;
+}
+body.flx .section.carousel .scroll.scrollright::before {
+  left: 10px;
+  content: "";
+}
+body.flx .section.carousel .realwindow.title-layout {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+body.flx .section.carousel .realwindow.title-layout a {
+  flex: 0 0 170px;
+  width: 130px;
+  overflow: visible;
+}
+body.flx .section.carousel .realwindow.title-layout a .block {
+  height: 180px;
+  width: 140px;
+  background-repeat: no-repeat;
+}
+body.flx .section.carousel .realwindow.title-layout a .block .headerSpecs {
+  position: relative;
+  top: -10px;
+}
+body.flx .section.carousel .realwindow.title-layout a .block .headerSpecs i {
+  padding: 5px 20px 10px 30px;
+  font-family: "Noto Sans Sc", sans-serif;
+  color: rgba(164, 166, 172, 0.7);
+  font-weight: 500;
+  float: left;
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+body.flx .section.carousel .realwindow.title-layout a .block .headerSpecs i::before {
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+  top: 2px;
+  font-size: 16px;
+  color: #ef9f48;
+  font-family: "Font Awesome 5 Free";
+}
+body.flx .section.carousel .realwindow.title-layout a h1 {
+  z-index: 5;
+  top: initial;
+  position: relative;
+}
 body.flx .section.profile .usertop {
   width: 100%;
   height: auto;
   padding: 20px 0 100px 0;
   overflow: auto;
   text-align: center;
+}
+body.flx .section.profile .usertop .badges {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+body.flx .section.profile .usertop .badges .type {
+  padding: 2px 10px 2px 10px;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+body.flx .section.profile .usertop .badges .Ny {
+  color: #f37646;
+  border-color: rgba(243, 118, 70, 0.7);
+}
+body.flx .section.profile .usertop .badges .Livstid {
+  color: #ef9f48;
+  border-color: rgba(239, 159, 72, 0.7);
+}
+body.flx .section.profile .usertop .badges .VIP {
+  color: #a436ee;
+  border-color: rgba(164, 54, 238, 0.7);
+}
+body.flx .section.profile .usertop .badges .Stortittare {
+  color: #e6cc80;
+  border-color: rgba(230, 203, 127, 0.7);
+}
+body.flx .section.profile .usertop .badges .Premium, body.flx .section.profile .usertop .badges .Ultimate, body.flx .section.profile .usertop .badges .Basic {
+  color: #00ccff;
+  border-color: rgba(0, 204, 255, 0.7);
 }
 body.flx .section.profile .usertop h1 {
   text-align: center;
@@ -2900,7 +3335,7 @@ body.flx .section.profile .usertop h1 {
   padding: 0;
   font-size: 1.5em;
   margin: 30px 0 0 0;
-  font-weight: 400;
+  font-weight: 600;
 }
 body.flx .section.profile .usertop span {
   text-align: center;
@@ -2974,7 +3409,7 @@ body.flx .section.profile .profileCat .active {
 }
 body.flx .section.profile .profileCat span {
   border-bottom: 1px solid transparent;
-  width: 50%;
+  width: 33.3333333333%;
   display: block;
   color: #a4a6ac;
   font-size: 10px;
@@ -2992,6 +3427,9 @@ body.flx .section.login {
 body.flx .section.login .anim {
   transform: rotateY(-180deg);
   transition: all 1s ease;
+}
+body.flx .section.login .reg {
+  top: -200px;
 }
 body.flx .section.login img {
   transform: rotateY(0);
@@ -3013,6 +3451,8 @@ body.flx .section.all.fixedcat .catselect {
   border-left: 0;
   border-right: 0;
   height: 70px;
+  margin-bottom: 50px;
+  padding-left: 10px;
 }
 body.flx .section.all.fixedcat .catselect h1 {
   font-size: 1.5em;
@@ -3023,39 +3463,92 @@ body.flx .section.all.fixedcat .catselect h1 {
 body.flx .section.all.fixedcat .catselect .catselecth {
   display: inline-block;
   position: relative;
-  top: 17px;
+  top: 15px;
   left: 0px;
   width: 220px;
 }
-body.flx .section.all.fixedcat .catselect .letters {
+body.flx .section.all.fixedcat .catselect .pageselect {
   display: inline-block;
-  top: 15px;
-  left: 20px;
+  position: absolute;
+  left: 40px;
+  top: -10px;
+  overflow: visible;
+}
+body.flx .section.all.fixedcat .catselect .pageselect h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #ef9f48;
+}
+body.flx .section.all.fixedcat .catselect .pageselect span {
+  color: #a4a6ac;
+  font-size: 10px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+body.flx .section.all.fixedcat .catselect .pageselect a {
+  width: 20px;
+  height: 75px;
   position: relative;
 }
-body.flx .section.all.fixedcat .catselect .letters span {
+body.flx .section.all.fixedcat .catselect .pageselect a::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #a4a6ac;
+  position: relative;
+  top: 25px;
+  font-size: 18px;
+}
+body.flx .section.all.fixedcat .catselect .pageselect a.right {
+  left: 25px;
+}
+body.flx .section.all.fixedcat .catselect .pageselect a.right::before {
+  content: "";
+}
+body.flx .section.all.fixedcat .catselect .pageselect a.left {
+  right: 25px;
+}
+body.flx .section.all.fixedcat .catselect .pageselect a.left::before {
+  content: "";
+}
+body.flx .section.all.fixedcat .catselect .letters {
+  display: inline-block;
+  top: 20px;
+  left: 20px;
+  display: none;
+  position: relative;
+}
+body.flx .section.all.fixedcat .catselect .letters a {
+  display: inline;
+  height: auto;
+  width: auto;
   cursor: pointer;
   color: #ef9f48;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   border-right: 1px solid #000;
   padding: 5px 15px 5px 15px;
   margin: 0;
 }
-body.flx .section.all.fixedcat .catselect .letters span:hover {
+body.flx .section.all.fixedcat .catselect .letters a:hover {
   background: #141414;
 }
 body.flx .section.all.fixedcat .catselect .genreselect {
   width: 218px;
-  left: 0px;
+  left: 180px;
   top: 0;
   display: inline-block;
   font-size: 16px;
   font-weight: 900;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  background: #000;
+  background: rgba(0, 0, 0, 0.1);
   text-transform: capitalize;
+  margin-right: 200px;
   border: 1px solid #000;
   padding: 5px;
   position: relative;
@@ -3218,7 +3711,8 @@ body.flx .section.last {
   margin-bottom: 100px;
 }
 body.flx .section.recom {
-  height: 600px;
+  min-height: 800px;
+  padding: 0;
 }
 body.flx .section.recom .overlay {
   background-repeat: no-repeat;
@@ -3247,29 +3741,39 @@ body.flx .section.recom .recomContent {
   position: absolute;
   left: 0;
   right: 0;
-  top: 100px;
+  top: 0;
+  padding: 100px 0 100px 0;
 }
 body.flx .section.recom .recomContent .recVid {
   box-shadow: 0px 50px 70px -30px #000;
   display: inline-block;
-  height: 360px;
+  height: auto;
   overflow: hidden;
   float: left;
   opacity: 0.85;
-  width: 640px;
-  max-width: 640px;
+  width: 100%;
+  max-width: 2000px;
+  height: 180px;
+}
+body.flx .section.recom .recomContent .recVid #playerWrap {
+  width: 100%;
+  height: 180px;
+}
+body.flx .section.recom .recomContent .recVid #playerWrap iframe {
+  width: 100%;
+  height: 100%;
 }
 body.flx .section.recom .recomContent .info {
-  width: 50%;
-  float: right;
-  padding: 5% 2% 5% 2%;
+  width: 100%;
+  float: left;
+  padding: 50px 2% 5% 2%;
   border-radius: 3px;
   position: relative;
   background: rgba(0, 0, 0, 0);
 }
 body.flx .section.recom .recomContent .info .headerSpecs {
   position: absolute;
-  top: 5%;
+  top: 10%;
 }
 body.flx .section.recom .recomContent .info .headerSpecs i {
   padding: 5px 20px 10px 10px;
@@ -3323,7 +3827,7 @@ body.flx .section.recom .recomContent .info h1 {
   color: #fff;
   text-transform: capitalize;
   margin: 0;
-  font-size: 4em;
+  font-size: 2em;
   background: none;
   -webkit-text-fill-color: initial;
   -webkit-background-clip: initial;
@@ -3590,6 +4094,14 @@ body.flx .section .loginContainer {
   position: relative;
   top: 350px;
 }
+body.flx .section .loginContainer h1 {
+  font-size: 18px;
+  color: #ef9f48;
+}
+body.flx .section .loginContainer p {
+  font-size: 12px;
+  color: #a4a6ac;
+}
 body.flx .section .inputContainer.submit {
   background: linear-gradient(-90deg, rgba(238, 158, 72, 0.8) 0%, rgba(244, 119, 71, 0.8) 100%);
   position: relative;
@@ -3606,8 +4118,10 @@ body.flx .section .inputContainer.submit button {
   outline: 0;
   font-size: 12px;
   position: relative;
+  cursor: pointer;
 }
 body.flx .section .inputContainer.submit::before {
+  cursor: pointer;
   box-sizing: content-box;
   content: "";
   left: 1px;
@@ -3621,7 +4135,7 @@ body.flx .section .inputContainer.submit::before {
 body.flx .section .inputContainer.static {
   border-radius: 0;
   width: 100%;
-  padding: 20px 0 20px 0;
+  padding: 20px 0 80px 0;
   background: transparent;
   border: 0;
 }
@@ -3908,9 +4422,10 @@ body.flx .section .title-layout a:hover {
   transition: all 0.2s ease;
 }
 body.flx .section .title-layout a:hover .block {
-  box-shadow: 0px 20px 70px -50px rgba(255, 168, 66, 0.5);
+  box-shadow: 0px 20px 70px 10px rgba(0, 0, 0, 0.5);
 }
 body.flx .section .title-layout .block {
+  transition: all 0.2s ease;
   white-space: normal;
   display: inline-block;
   width: 160px;
@@ -3953,6 +4468,16 @@ body.flx .pcnav {
   background: #141414;
   overflow: hidden;
 }
+body.flx .pcnav .logout {
+  position: relative;
+  left: 90px;
+  text-decoration: none;
+  color: #ef9f48;
+  font-weight: 900;
+  font-size: 12px;
+  top: 12px;
+  display: inline-block;
+}
 body.flx .pcnav .navcontent {
   width: 70%;
   position: absolute;
@@ -3975,11 +4500,11 @@ body.flx .pcnav i {
   margin: 0;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  padding: 12px 0 15px 0;
+  font-weight: 400;
+  padding: 20px 0 15px 0;
   box-sizing: border-box;
-  font-size: 14px;
-  font-family: "PT Sans", sans-serif;
+  font-size: 12px;
+  font-family: "Noto Sans Sc", sans-serif;
   position: relative;
 }
 body.flx .pcnav i:hover {
@@ -3998,7 +4523,7 @@ body.flx .pcnav i::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
-  display: block;
+  display: none;
 }
 body.flx .portalNav {
   position: fixed;

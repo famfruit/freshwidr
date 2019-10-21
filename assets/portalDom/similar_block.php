@@ -1,12 +1,19 @@
 <?php
     if(isset($main->latestCookie)){
       ?>
-        <div class="section last similar">
-          <span class="small"> <strong>Liknar</strong>  <?php echo $main->moviePage ?></span>
-          <div class="title-layout">
+        <div class="section last carousel similar">
+          <div class="scroll scrolleft hidden"></div>
+          <div class="scroll scrollright"></div>
+          <span class="small xxl"> <strong>Liknar</strong>  <?php if(isset($main->moviePage)){ echo $main->moviePage; } else if (isset($main->seriesPage)) { echo $main->seriesPage; } ?></span>
+          <div class="realwindow title-layout">
           <?php
             #$sql = "SELECT * FROM movies WHERE MATCH(genre) AGAINST ('$rawgenre' IN BOOLEAN MODE) LIMIT 20";
-            $sql = "SELECT * FROM movies WHERE genre LIKE '%$rawgenre%' AND title NOT LIKE '%$main->moviePage%' ORDER BY views, releasedate DESC LIMIT 20";
+            if($sqlpointer == 'movies'){
+              $like = $main->moviePage;
+            } else {
+              $like = $main->seriesPage;
+            }
+            $sql = "SELECT * FROM $sqlpointer WHERE genre LIKE '%$rawgenre%' AND title NOT LIKE '%$like%' ORDER BY views, releasedate DESC LIMIT 20";
             $result = $main->getFromMysql($sql);
             while($row = mysqli_fetch_assoc($result)){
               $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];

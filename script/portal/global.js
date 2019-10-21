@@ -28,6 +28,50 @@ window.onload = function () {
 
 
 $(document).ready(function(){
+
+    size = window.innerWidth / 1.2
+    margin = window.innerWidth / 9.8
+    // CAROUSEL
+    var storeScrollValue = 0
+
+    $('.scrolleft').click(function(){
+      sleft = $(this).parent().find('.realwindow').scrollLeft()
+      // get remainder from old and new, thats the scrollwidth
+      scrollAmount = $(this).parent().find('.realwindow')[0].scrollWidth - $(this).parent().find('.realwindow')[0].clientWidth - margin;
+      $(this).parent().find('.scrollright').removeClass('hidden')
+      console.log(sleft)
+      if(sleft < 200){
+        $(this).parent().find('.scrolleft').addClass('hidden')
+      }
+      storeScrollValue = sleft
+      $(this).parent().find('.realwindow').animate({
+        scrollLeft: "-=" + size + "px"
+      }, "fast");
+    });
+
+
+
+
+    $('.scrollright').click(function(){
+      sleft = $(this).parent().find('.realwindow').scrollLeft()
+      $(this).parent().find('.scrolleft').removeClass('hidden')
+      // get remainder from old and new, thats the scrollwidth
+      scrollAmount = $(this).parent().find('.realwindow')[0].scrollWidth - $(this).parent().find('.realwindow')[0].clientWidth - margin;
+      if(sleft > scrollAmount * 0.95){
+        $(this).parent().find('.scrollright').addClass('hidden')
+      }
+      storeScrollValue = sleft
+      $(this).parent().find('.realwindow').animate({
+        scrollLeft: "+=" + size + "px"
+      }, "fast");
+    });
+
+    //
+
+
+
+
+
     $('.round').click(function(){
       $(this).addClass('load')
       $('.btnhloader').addClass('vis')
@@ -187,7 +231,30 @@ $(document).ready(function(){
     $('iframe').attr('src', source)
   })
 
-
+  $('.toreg').click(function(){
+    user = $('.iusr').val()
+    email = $('.ieml').val()
+    pw = $('.ipw').val()
+    key = $('.getvlkey').val()
+    if(user.length != 0 && email.length != 0 && pw.length != 0){
+      $('.logoimg').attr('src', 'assets/img/animlogo.gif').addClass('anim')
+      console.log(user, email, pw, key)
+      $.ajax({
+        type: "POST",
+        data: {regSet: true, username: user, email:email, password:pw, regKey:key},
+        success: function(data){
+          console.log(data);
+          // Update page or whatever
+          if(data == 'true'){
+            loc = location.href.substring(0, location.href.indexOf('?'))
+            location.href = loc
+          }
+        }
+      })
+    } else {
+      // Mark the one thats empty
+    }
+  })
   $('.tolgn').click(function(){
 
     user = $('.iusr').val()
@@ -202,12 +269,14 @@ $(document).ready(function(){
           if(data != 'false'){
             // Update page or whatever
             loc = location.href.substring(0, location.href.indexOf('?'))
-            location.href = loc
+            location.href = loc + "?profile=news"
           }
         }
       })
 
 
+    } else {
+      // Mark the one thats empty
     }
   })
 

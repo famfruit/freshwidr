@@ -3,7 +3,7 @@
   spl_autoload_register('autoLoadClasses');
   function autoLoadClasses($className){
     $path = "classes/";
-    $ext = ".class.ph p";
+    $ext = ".class.php";
     $fullP = $path . $className . $ext;
     include_once $fullP;
   }
@@ -27,6 +27,7 @@
       $id = $row['id'];
       $sql = "UPDATE $sqlPrefix SET img = '$img', genre = '$genres', releasedate = '$reldate' WHERE id = $id";
       mysqli_query($main->con, $sql);
+      echo $id."<br>";
     }
   } else {
     echo "Didnt find anything";

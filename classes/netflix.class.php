@@ -14,6 +14,8 @@
       $this->loginSet = isset($_POST['loginSet']) ? $_POST['loginSet'] : null;
       $this->username = isset($_POST['username']) ? $_POST['username'] : null;
       $this->password = isset($_POST['password']) ? $_POST['password'] : null;
+      $this->regKey = isset($_POST['regKey']) ? $_POST['regKey'] : null;
+      $this->email = isset($_POST['email']) ? $_POST['email'] : null;
       $this->typeCat = isset($_GET['c']) ? $_GET['c'] : null;
       $this->dateCreated = date("Y-m-d H:i:s");
       $this->profilePage = isset($_GET['profile']) ? $_GET['profile'] : null;
@@ -25,6 +27,12 @@
       $this->userChangeSet = isset($_POST['userChangeSet']) ? $_POST['userChangeSet'] : null;
       $this->userChangeInfo = isset($_POST['userChangeInfo']) ? $_POST['userChangeInfo'] : null;
       $this->generateInvite = isset($_POST['generateInvite']) ? $_POST['generateInvite'] : null;
+      $this->letterCat = isset($_GET['l']) ? $_GET['l'] : null;
+      $this->typeCurPage = isset($_GET['p']) ? $_GET['p'] : null;
+      $this->newsPage = isset($_GET['news']) ? $_GET['news'] : null;
+      $this->clearCookies = isset($_POST['clearCookies']) ? $_POST['clearCookies'] : null;
+      $this->refPage = isset($_GET['inv']) ? $_GET['inv'] : null;
+      $this->regSet = isset($_POST['regSet']) ? $_POST['regSet'] : null;
       $this->genres = array(
         "action" => 28,
         "animerad" => 16,
@@ -46,6 +54,15 @@
         "western" => 37,
         "äventyr" => 12
       );
+      $this->privs = array(
+        "Livstid",
+        "VIP",
+        "Ny",
+        "Stortittare",
+        "Ultimate",
+        "Premium",
+        "Basic"
+      );
     }
 
     public function randomString($num){
@@ -58,7 +75,7 @@
       return $randomString;
     }
     public function buildDatabase($title){
-      $data = json_decode(file_get_contents($this->api."&query=".$title."&language=sv",true), true);
+      $data = json_decode(file_get_contents($this->api."&query=".$title,true), true);
       if($data){
         return $data['results'][0];
       } else {
@@ -66,7 +83,7 @@
       }
     }
     public function getFromAPI($title){
-      $data = json_decode(file_get_contents($this->api."&query=".$title."&language=sv",true), true);
+      $data = json_decode(file_get_contents($this->api."&query=".$title,true), true);
       return $data;
     }
     public function getFromAPI_tv($title){
@@ -148,9 +165,16 @@
       return substr_replace($returnString, "", - 9);
     }
     public function getSingleGenre(){
-      foreach($this->genres as $key => $value) {
-        if($this->typeCat == $value){
-          return $key;
+      # Get the paramtera from url C
+      # if C == alla
+      # return
+      if($this->typeCat == 'alla'){
+        return "alla";
+      } else {
+        foreach($this->genres as $key => $value) {
+          if($this->typeCat == $value){
+            return $key;
+          }
         }
       }
     }
@@ -199,6 +223,31 @@
     public function sortByViews($a, $b){
       return $a['clicks'] - $b['clicks'];
     }
+    public function registerUser(){
+      echo $this->username;
+      echo $this->email;
+      echo $this->password;
+      echo $this->regKey;
+
+      $sql = "SELECT * FROM clients WHERE name = '$this->username'";
+      $result = $this->getFromMysql($sql);
+      if($result->num_rows > 0){
+        # User already exists
+        return false;
+      } else {
+        $thedate = date("Y-m-d H:i:s");
+        $password = password_hash($this->password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO clients (name, email, password, date_created, invites, admin, priv) VALUES ('$this->username', '$this->email','$password','$thedate', 5, 0, '[0,2]')";
+        mysqli_query($this->con, $sql);
+
+        $sql = "UPDATE invites SET status = 1, completed = 1, reguser = '$this->username' WHERE vkey = '$this->regKey'";
+        mysqli_query($this->con, $sql);
+
+        echo "true";
+        exit;
+      }
+
+    }
     public function authenticate(){
       ## True / False return
       $result = $this->getFromMysql("SELECT * FROM clients WHERE name = '$this->username'");
@@ -227,7 +276,7 @@
       }
     }
 
-    public function personalizeRecom(){
+    public function personalizeRecom($amount){
           $cookie = json_decode($this->latestCookie);
           $moviePoints = array("28" => 0, "16" => 0, "99" => 0, "18" => 0, "10751" => 0, "14" => 0, "36" => 0, "35" => 0, "10752" => 0, "80" => 0, "10402" => 0, "9648" => 0, "10749" => 0, "878" => 0, "27" => 0, "10770" => 0, "53" => 0, "37" => 0, "12" => 0);
           foreach($cookie->movie as $key => $value) {
@@ -267,7 +316,7 @@
           }
 
           $cat = strval($highNum[0]);
-          $sql = "SELECT *, 'movies' as mc FROM movies WHERE genre LIKE '%$cat%' UNION SELECT *, 'series' as mc FROM series WHERE genre LIKE '%$cat%' ORDER BY releasedate DESC LIMIT 1";
+          $sql = "SELECT *, 'movies' as mc FROM movies WHERE genre LIKE '%$cat%' UNION SELECT *, 'series' as mc FROM series WHERE genre LIKE '%$cat%' ORDER BY releasedate DESC LIMIT $amount";
           $result = $this->getFromMysql($sql);
           return $result;
     }

@@ -3,18 +3,21 @@
     $data = json_decode($main->latestCookie, true);
 
     if(sizeOf($data['movie']) != 0){
-      
+
     }
     ?>
-    <div class="section">
         <?php
         foreach($data as $key => $type){
           $tag = '';
           if($key == 'movie') { $tag = 'filmer'; } else if ($key == 'serie') { $tag = 'serier'; }
+          if(!empty($type)){
 
           ?>
-            <span class="small">tidigare <?php echo $tag ?></span>
-            <div class="title-layout">
+            <div class="section carousel">
+            <div class="scroll scrolleft hidden"></div>
+            <div class="scroll scrollright"></div>
+            <span class="small xxl">tidigare <?php echo $tag ?></span>
+            <div class="realwindow title-layout">
              <?php
                ## Sort the arrays by highest clicks
                usort($type, function($a, $b) {
@@ -32,10 +35,11 @@
               }
              ?>
             </div>
+          </div>
           <?php
         }
+        }
         ?>
-    </div>
 
     <?php
   } else {

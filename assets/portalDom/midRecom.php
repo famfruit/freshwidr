@@ -22,7 +22,7 @@
 
       #}
 
-      $result = $main->personalizeRecom();
+      $result = $main->personalizeRecom(1);
       while($row = mysqli_fetch_assoc($result)){
         if($row['mc'] == 'movies'){
           $data = $main->getFromAPI($row['title']);
@@ -38,7 +38,7 @@
 
         $header = $data['results'][0]['backdrop_path'];
         $vd = json_decode(file_get_contents($vidData),true);
-
+        $genre = $main->compileGenres($row['genre']);
 
       ?>
       <div class="section recom">
@@ -116,8 +116,8 @@
 
         <div class="info">
 
-        <h1><?php echo ucfirst(str_replace("-", " ",$row['title'])) ?></h1>
-        <p><?php echo $out ?></p>
+        <h1><?php echo ucfirst(str_replace("-", " ",$data['results'][0]['title'])) ?></h1>
+        <p><?php echo $data['results'][0]['overview'] ?></p>
         <div class="headerbuttons">
           <a href="?<?php echo $atg?>=<?php echo $row['title'] ?>">
           <span class="button play">Spela upp</span>

@@ -55,7 +55,7 @@
 
 
 
-           <div class="overlay"></div>
+           <div class="overlay" id="b"></div>
            <img src="https://image.tmdb.org/t/p/original<?php echo $img_1?>" alt="">
          </div>
          <?php

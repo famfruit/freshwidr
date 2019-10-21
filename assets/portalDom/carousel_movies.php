@@ -6,7 +6,7 @@
 
       <?php
         #$sql = "SELECT * FROM movies WHERE MATCH(genre) AGAINST ('$rawgenre' IN BOOLEAN MODE) LIMIT 20";
-        $sql = "SELECT *, 'movie' as moviedb FROM movies UNION SELECT *, 'serie' as moviedb FROM series ORDER BY views, releasedate DESC LIMIT 20";
+        $sql = "SELECT *, 'movie' as moviedb FROM movies ORDER BY views, releasedate DESC LIMIT 20";
         $result = $main->getFromMysql($sql);
         while($row = mysqli_fetch_assoc($result)){
           if($row['genre'] == 'null' || $row['genre'] == "[]"){

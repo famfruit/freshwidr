@@ -1,9 +1,268 @@
+
+@media only screen and (min-width: 425px)
+  body.flx
+    div.section.recom
+      div.recomContent
+        div.recVid
+          height: 250px
+          width: 100%
+          div#playerWrap
+            height: 100%
+            width: 100%
+            iframe
+              height: 100%
+    div.section.header
+      div.header
+        div.trailer_video
+          video
+            width: 140%
+            left: -20%
+    div.section.all
+      a
+        width: 1/3*100%
+@media only screen and (min-width: 535px)
+  body.flx
+    div.section.recom
+      div.recomContent
+        div.recVid
+          height: 300px
+    div.section.all
+      a
+        width: 1/4*100%
+        div.block
+          background-size: 100% 110%
+@media only screen and (min-width: 769px)
+  body.flx
+    div.section.all.fixedcat
+      div.catselect
+        div.catselecth
+          div.genreholder
+            width: 500px
+            a
+              width: 50%
+              float: left
+              padding: 5px 10px 5px 10px
+              border: 1px solid rgba(#000, 0.3)
+              border-top: 0
+              border-left: 0
+              span
+                border: 0
+@media only screen and (min-width: 768px)
+  body.flx
+    padding-top: 60px
+    div.section.recom
+      div.recomContent
+        div.recVid
+          height: 360px
+    div.section.carousel
+      div.scroll
+        width: 100px
+        height: 240px
+        &::before
+          top: 110px
+      div.scroll.scrollright
+        &::before
+          left: 40px
+      div.scroll.scrolleft
+        &::before
+          left: 10px
+
+      div.realwindow.title-layout
+        height: 350px
+        a
+          width: 190px
+          flex: 0 0 220px
+          div.block
+            width: 190px
+            height: 240px
+    div.section.all
+      a
+        width: 1/5*100%
+        div.block
+          background-size: 100% 140%!important
+    div.searchResults
+      top: 110px
+      border-bottom: 2px solid black
+    div.searchBar
+      top: 60px
+      border-top: 2px solid black
+    div.pcnav
+      display: block
+    div.portalNav
+      display: none
+    div.section.header
+      min-height: 500px
+      div.header
+        max-height: 650px
+        div.trailer_video
+          video
+            width: 100%
+            left: 0
+            top: -20%
+        div.headercontents
+          padding: 150px 10px 100px 10px
+          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
+        img
+          width: 100%
+          left: 0
+@media only screen and (min-width: 1024px)
+  body.flx
+    div.section.recom
+      div.recomContent
+        width: 90%
+        color: #fff
+        margin: 0 auto
+        background: transparent
+        position: absolute
+        left: 0
+        right: 0
+        top: 100px
+        .recVid
+          box-shadow: 0px 50px 70px -30px #000
+          display: inline-block
+          height: 280px!important
+          width: 480px!important
+          overflow: hidden
+          float: left
+          opacity: 0.85
+          max-width: 640px
+        .info
+          width: 45%
+          float: right
+          padding: 5% 2% 5% 2%
+          border-radius: 3px
+          position: relative
+          background: rgba(#000, 0)
+          .headerSpecs
+            position: absolute
+            top: 5%
+            i
+              padding: 5px 20px 10px 10px
+              color: rgba(#fff, .9)
+              font-weight: 500
+              float: left
+              display: block
+              width: 100%
+              font-size: 10px
+              text-transform: capitalize
+              &::before
+                position: relative
+                right: 5px
+                font-weight: 900
+                top: 2px
+                font-size: 16px
+                font-family: 'Font Awesome 5 Free'
+          .headerbuttons
+            padding: 0
+            position: relative
+            top: 30px
+            a
+              text-decoration: none
+            .button
+              color: rgba(#fff, 1)
+              font-size: 12px
+              padding: 7px 10px 7px 10px
+              background: rgba(#fff, 0.05)
+              margin-right: 20px
+              &::before
+                margin-right: 10px
+                font-family: 'Font Awesome 5 Free'
+                font-weight: 900
+            .button.play
+              &::before
+                content: '\f04b'
+            .button.info
+              &::before
+                content: '\f059'
+          h1
+            font-weight: 600
+            color: #fff
+            text-transform: capitalize
+            margin: 0
+            font-size: 1.5em
+            background: none
+            -webkit-text-fill-color: initial
+            -webkit-background-clip: initial
+          p
+            text-shadow: 0px 0px 5px rgba(#000000, 0.48)
+            color: #d7d7d7
+            line-height: 1.7
+            margin-top: 0
+            display: block
+            margin-bottom: 10px
+            white-space: pre-line
+            overflow: hidden
+            height: 9ch
+            text-overflow: ellipsis
+            max-width: 90ch
+          .spotlog.tuck
+            max-width: 100px
+            top: 0
+            transition: all 2s ease
+            transition-delay: 2s
+          img
+            transition-delay: 2s
+            transition: all 2s ease
+            position: relative
+            z-index: 0
+            left: initial
+            max-width: 300px
+            top: -100px
+            height: auto
+
+    div.section.last.similar
+    div.section.profile
+      width: 768px
+    div.section.all
+      a
+        padding: 5px 5px 45px 5px
+        width: 170px
+        height: 300px
+        max-height: 300px
+        margin-right: 4px
+        div.block
+          background-size: 170px 230px!important
+          height: 230px
+          h1
+            top: 225px
+    div.section.player
+      div.mediainformation
+        margin-top: 50px
+      div.videopl
+        iframe
+          min-height: 94vh
+    div.pcnav
+      div.navcontent
+        width: 70%
+    div.section.header
+      min-height: 500px
+      div.header
+        max-height: 650px
+        div.headercontents
+          padding: 150px 10px 100px 10px
+          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
+        img
+          width: 100%
+          left: 0
+@media only screen and (min-width: 1220px)
+  body.flx
+    div.section.recom
+      div.recomContent
+        div.recVid
+          height: 335px!important
+          width: 600px!important
 @media only screen and (min-width: 1440px)
   body.flx
+    div.section.recom
+      div.recomContent
+        max-width: 1400px
+        div.recVid
+          height: 360px!important
+          width: 640px!important
     div.section.player
       div.videopl
         iframe
-          min-height: 100vh!important
+          min-height: 90vh!important
     div.pcnav
       div.navcontent
         width: 50%!important
@@ -53,111 +312,7 @@
         position: absolute
         top: 0
 
-@media only screen and (min-width: 535px)
-  body.flx
-    div.section.all
-      a
-        width: 1/4*100%
-        div.block
-          background-size: 100% 110%
-@media only screen and (min-width: 425px)
-  body.flx
-    div.section.header
-      div.header
-        div.trailer_video
-          video
-            width: 140%
-            left: -20%
-    div.section.all
-      a
-        width: 1/3*100%
-@media only screen and (min-width: 769px)
-  body.flx
-    div.section.all.fixedcat
-      div.catselect
-        div.catselecth
-          div.genreholder
-            width: 500px
-            a
-              width: 50%
-              float: left
-              padding: 5px 10px 5px 10px
-              border: 1px solid rgba(#000, 0.3)
-              border-top: 0
-              border-left: 0
-              span
-                border: 0
-@media only screen and (min-width: 768px)
-  body.flx
-    padding-top: 60px
-    div.section.all
-      a
-        width: 1/5*100%
-        div.block
-          background-size: 100% 140%!important
-    div.searchResults
-      top: 110px
-      border-bottom: 2px solid black
-    div.searchBar
-      top: 60px
-      border-top: 2px solid black
-    div.pcnav
-      display: block
-    div.portalNav
-      display: none
-    div.section.header
-      min-height: 500px
-      div.header
-        max-height: 650px
-        div.trailer_video
-          video
-            width: 100%
-            left: 0
-            top: -20%
-        div.headercontents
-          padding: 150px 10px 100px 10px
-          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
-        img
-          width: 100%
-          left: 0
-@media only screen and (min-width: 1024px)
-  body.flx
-    div.section.last.similar
-      width: 1024px
-    div.section.profile
-      width: 768px
-    div.section.all
-      a
-        padding: 5px 5px 45px 5px
-        width: 170px
-        height: 300px
-        max-height: 300px
-        margin-right: 4px
-        div.block
-          background-size: 170px 230px!important
-          height: 230px
-          h1
-            top: 225px
-    div.section.player
-      div.mediainformation
-        width: 1024px
-        margin-top: 50px
-      div.videopl
-        iframe
-          min-height: 100vh
-    div.pcnav
-      div.navcontent
-        width: 70%
-    div.section.header
-      min-height: 500px
-      div.header
-        max-height: 650px
-        div.headercontents
-          padding: 150px 10px 100px 10px
-          background: linear-gradient(15deg, #121111 25%, rgba(18, 17, 17, 0) 60%)
-        img
-          width: 100%
-          left: 0
+
 @media only screen and (max-width: 1366px)
   // ADMIN STUFF
 

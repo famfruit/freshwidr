@@ -429,7 +429,7 @@ Homepage
 #/ Sort JS scripts for the right pages
 
 
-
+$('.vjs-poster')[0].style.backgroundImage = 'url("asd")'
 
 
 
@@ -457,3 +457,61 @@ Click =>
       right: -150px
     elif(right)
       right: 150px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Nyheter
+  Admin nyheter, tävlingar, updates osv
+    Kommentarer
+
+# Universal AdBlock
+  Via apacheproxy
+    Disable with JS
+  With PHP through url GET
+
+# Sorting Category
+    <<               <         [ NUM ]  >  >>
+    |                |         av num
+    |                |
+To first page     Previous 
+
+# Series Design
+  Mobile
+    Have big button in middle
+      Bar icon
+      Netflix like series bar
+  PC
+    Keep OG
