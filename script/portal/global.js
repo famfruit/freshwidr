@@ -224,12 +224,30 @@ $(document).ready(function(){
 
 
   // Determine episodes
-  $('.epsd').click(function(){
-    source = $(this)[0].dataset.lnk;
-    $('.epsd').removeClass('active')
-    $(this).addClass('active')
-    $('iframe').attr('src', source)
+
+
+
+  $('.reportBtn').click(function(){
+    $('.reportContentOptions').toggleClass('vis')
   })
+
+  $('.specRepBtn').click(function(){
+    val = $(this)[0].dataset.vl
+    vidId = $('.reportContentOptions')[0].dataset.vlid
+    pageId = $('.reportContentOptions')[0].id
+    usr = $('.reportBtn')[0].dataset.usr
+    arr = [vidId, val, pageId, usr]
+
+    $.ajax({
+      type: "POST",
+      data: {reportSet:true, reportValue:arr},
+      success: function(data){
+        $('.reportContentOptions').remove()
+        $('.reportContent').append('<h2>Tack för din rapport!</h2>')
+      }
+    })
+  })
+
 
   $('.toreg').click(function(){
     user = $('.iusr').val()
@@ -238,14 +256,14 @@ $(document).ready(function(){
     key = $('.getvlkey').val()
     if(user.length != 0 && email.length != 0 && pw.length != 0){
       $('.logoimg').attr('src', 'assets/img/animlogo.gif').addClass('anim')
-      console.log(user, email, pw, key)
+
       $.ajax({
         type: "POST",
         data: {regSet: true, username: user, email:email, password:pw, regKey:key},
         success: function(data){
           console.log(data);
           // Update page or whatever
-          if(data == 'true'){
+          if(data != 'false'){
             loc = location.href.substring(0, location.href.indexOf('?'))
             location.href = loc
           }
@@ -260,7 +278,7 @@ $(document).ready(function(){
     user = $('.iusr').val()
     pw = $('.ipw').val()
     if(user.length != 0 && pw.length != 0){
-      console.log(user, pw)
+
       $('.logoimg').attr('src', 'assets/img/animlogo.gif').addClass('anim')
       $.ajax({
         type: "POST",

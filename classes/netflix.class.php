@@ -33,6 +33,10 @@
       $this->clearCookies = isset($_POST['clearCookies']) ? $_POST['clearCookies'] : null;
       $this->refPage = isset($_GET['inv']) ? $_GET['inv'] : null;
       $this->regSet = isset($_POST['regSet']) ? $_POST['regSet'] : null;
+      $this->reportSet = isset($_POST['reportSet']) ? $_POST['reportSet'] : null;
+      $this->reportValue = isset($_POST['reportValue']) ? $_POST['reportValue'] : null;
+      $this->seasonPick = isset($_GET['se']) ? $_GET['se'] : null;
+      $this->episodePick = isset($_GET['ep']) ? $_GET['ep'] : null;
       $this->genres = array(
         "action" => 28,
         "animerad" => 16,
@@ -102,14 +106,29 @@
           if(empty($compareArray)){
             ## If the array[INDEX] is empty, meaning no movie or serie
             ## add to brand new index
-            $newArray = array(
-              "id" => $titleArray['id'],
-              "title" => $titleArray['title'],
-              "img" => $titleArray['img'],
-              "genre" => $titleArray['genre'],
-              "clicks" => 0,
-              "type" => $type
-            );
+            if($type == 'serie'){
+              # Do special things to save episode and seasons
+              $newArray = array(
+                "id" => $titleArray['id'],
+                "title" => $titleArray['title'],
+                "img" => $titleArray['img'],
+                "genre" => $titleArray['genre'],
+                "clicks" => 0,
+                "type" => $type,
+                "Spointer" => $this->seasonPick,
+                "Epointer" => $this->episodePick
+              );
+            } else {
+              # its a movie, just save the title
+              $newArray = array(
+                "id" => $titleArray['id'],
+                "title" => $titleArray['title'],
+                "img" => $titleArray['img'],
+                "genre" => $titleArray['genre'],
+                "clicks" => 0,
+                "type" => $type
+              );
+            }
             array_push($cookieArray[$type], $newArray);
             $encodedCookie = json_encode($cookieArray);
             setcookie('latest', $encodedCookie, time() + (86400 * 30), "/"); // 86400 = 1 day
@@ -128,28 +147,63 @@
             ## If the counter is clean, theres no entry like this
               if($doubleCount === 0){
                 ## This a unique title in the subindex, proceed to add
-                $newArray = array(
-                  "id" => $titleArray['id'],
-                  "title" => $titleArray['title'],
-                  "img" => $titleArray['img'],
-                  "genre" => $titleArray['genre'],
-                  "clicks" => 0,
-                  "type" => $type
-                );
+                if($type == 'serie'){
+                  # Do special things to save episode and seasons
+                  $newArray = array(
+                    "id" => $titleArray['id'],
+                    "title" => $titleArray['title'],
+                    "img" => $titleArray['img'],
+                    "genre" => $titleArray['genre'],
+                    "clicks" => 0,
+                    "type" => $type,
+                    "Spointer" => $this->seasonPick,
+                    "Epointer" => $this->episodePick
+                  );
+                } else {
+                  # its a movie, just save the title
+                  $newArray = array(
+                    "id" => $titleArray['id'],
+                    "title" => $titleArray['title'],
+                    "img" => $titleArray['img'],
+                    "genre" => $titleArray['genre'],
+                    "clicks" => 0,
+                    "type" => $type
+                  );
+                }
                 array_push($cookieArray[$type], $newArray);
                 $encodedCookie = json_encode($cookieArray);
                 setcookie('latest', $encodedCookie, time() + (86400 * 30), "/"); // 86400 = 1 day
               } else {
                 ## Theres 1 existing entry of this type
                 ## Increment its viewcount and exit
-                $cookieArray[$type][$matchingKey]['clicks'] = $cookieArray[$type][$matchingKey]['clicks'] + 1;
+                if($type == 'serie'){
+                  # Increment views, EPISODE AND SEASONS
+                  $cookieArray[$type][$matchingKey]['Spointer'] = $this->seasonPick;
+                  $cookieArray[$type][$matchingKey]['Epointer'] = $this->episodePick;
+                  $cookieArray[$type][$matchingKey]['clicks'] = $cookieArray[$type][$matchingKey]['clicks'] + 1;
+                } else {
+                  # Increment only views
+                  $cookieArray[$type][$matchingKey]['clicks'] = $cookieArray[$type][$matchingKey]['clicks'] + 1;
+                }
+
                 $encodedCookie = json_encode($cookieArray);
                 setcookie('latest', $encodedCookie, time() + (86400 * 30), "/"); // 86400 = 1 day
               }
           }
       }
     }
+    public function sendErrorReport(){
+       $val = $this->reportValue;
 
+       $pageId = (int)$val[0];
+       $issue = $val[1];
+       $pageType = $val[2];
+       $user = $val[3];
+       $sql = "INSERT INTO reports (issue, pageId, pageType, byuser) VALUES ('$issue', '$pageId', '$pageType', '$user')";
+       mysqli_query($this->con, $sql);
+       exit;
+
+    }
     public function compileGenres($array){
       $returnString = "";
       $array = json_decode($array, true);
@@ -184,7 +238,7 @@
       #$sql = "SELECT *, 'film' as moviedb FROM movies WHERE title LIKE '%$string%' UNION SELECT *, 'serie' as moviedb FROM series WHERE title LIKE '%$string%'";
 
 
-      $sql = "SELECT *, 'serie' as moviedb FROM series WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) UNION SELECT *, 'film' as moviedb FROM movies WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) LIMIT 100";
+      $sql = "SELECT *, 'serie' as moviedb FROM series WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) AND status = 0 UNION SELECT *, 'film' as moviedb FROM movies WHERE MATCH(title) AGAINST ('$string*' IN BOOLEAN MODE) AND status = 0 LIMIT 100";
       $result = mysqli_query($this->con, $sql);
       $array = array();
       if(mysqli_num_rows($result) == 0){
@@ -195,7 +249,7 @@
         while($row = mysqli_fetch_assoc($result)){
           if(!$row['genre']){
 
-            $genre = "asdf";
+            $genre = "";
           } else {
             $genre = $this->compileGenres($row['genre']);
 
@@ -224,15 +278,11 @@
       return $a['clicks'] - $b['clicks'];
     }
     public function registerUser(){
-      echo $this->username;
-      echo $this->email;
-      echo $this->password;
-      echo $this->regKey;
-
       $sql = "SELECT * FROM clients WHERE name = '$this->username'";
       $result = $this->getFromMysql($sql);
       if($result->num_rows > 0){
         # User already exists
+        echo "false";
         return false;
       } else {
         $thedate = date("Y-m-d H:i:s");
@@ -316,7 +366,9 @@
           }
 
           $cat = strval($highNum[0]);
-          $sql = "SELECT *, 'movies' as mc FROM movies WHERE genre LIKE '%$cat%' UNION SELECT *, 'series' as mc FROM series WHERE genre LIKE '%$cat%' ORDER BY releasedate DESC LIMIT $amount";
+          #$sql = "SELECT *, 'movies' as mc FROM movies_test WHERE genre LIKE '%$cat%' AND status = 0 LIMIT $amount";
+          $sql = "SELECT * , 'series' as mc FROM series WHERE genre LIKE '%$cat%' AND status = 0 ORDER BY i_avg DESC LIMIT $amount";
+          #$sql = "SELECT *, 'movies' as mc FROM movies_test WHERE genre LIKE '%$cat%' AND status = 0 UNION SELECT *, 'series' as mc FROM series WHERE genre LIKE '%$cat%' AND status = 0 ORDER BY releasedate ASC LIMIT $amount";
           $result = $this->getFromMysql($sql);
           return $result;
     }
@@ -375,5 +427,10 @@
             return false;
           }
       }
+    }
+
+    public function fixQuery(){
+      header('Location: ?serie='.$this->seriesPage.'&se=1&ep=1');
+
     }
   }

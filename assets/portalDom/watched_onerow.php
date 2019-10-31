@@ -30,12 +30,18 @@
               # Now render the titles
               foreach($globalarray as $k => $v){
                 $imgstring = "https://image.tmdb.org/t/p/w185".$v['img'];
+
+                if($v['type'] == 'serie'){
+                  $urlExtras = "&se=".$v['Spointer']."&ep=".$v['Epointer'];
+                } else {
+                  $urlExtras = "";
+                }
                 ?>
-                    <a href="?<?php echo $v['type']?>=<?php echo $v['title'] ?>">
+                    <a href="?<?php echo $v['type']?>=<?php echo $v['title'].$urlExtras ?>">
                       <div class="block" style="background-image: url(<?php echo $imgstring ?>)">
                         <h1 class="small"><?php echo ucfirst(str_replace("-", " ",$v['title']))?></h1>
                         <div class="headerSpecs">
-                          <i class="fas fa-theater-masks"><?php echo $genre ?></i>
+                          <i class="fas famasks"><?php echo $genre ?></i>
                         </div>
                       </div>
                     </a>

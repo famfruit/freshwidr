@@ -19,7 +19,9 @@ $result = $main->personalizeRecom(10);
           <div class="block" style="background-image: url(<?php echo $imgstring ?>)">
             <h1 class="small"><?php echo ucfirst(str_replace("-", " ",$row['title']))?></h1>
             <div class="headerSpecs">
-              <i class="fas fa-theater-masks"><?php echo $genre ?></i>
+              <span class="avg"><?php echo number_format($row['i_avg'], 1)?></span>
+              <i class="fas fa-"><?php echo $genre ?></i>
+
             </div>
           </div>
         </a>

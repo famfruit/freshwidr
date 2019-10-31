@@ -47,7 +47,27 @@ function autoLoadClasses($className){
     $main->generateKey();
     exit;
   }
+  if(isset($main->reportSet)){
+    $main->sendErrorReport();
+    exit;
+  }
 
+  if(isset($main->moviePage) || isset($main->seriesPage)){
+    if(isset($main->moviePage)){
+      $newTitle = ucwords(str_replace("-", " ", $main->moviePage));
+    } else if(isset($main->seriesPage)){
+      $newTitle = ucwords(str_replace("-", " ", $main->seriesPage)). " | Avsnitt ".$main->episodePick. " - Säsong ".$main->seasonPick;
+    }
+  } else if(isset($main->refPage)){
+    $newTitle = "Telly - Registrera dig nu!";
+  } else if(!isset($main->loginCookie)){
+    $newTitle = "Telly - Logga in!";
+  } else if(isset($main->profilePage)){
+    $newTitle = "Telly - ".ucfirst($main->decodedUser['username']);
+  } else {
+    $newTitle = "Telly";
+  }
+  #var_dump(json_decode($main->latestCookie, true));
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -59,11 +79,11 @@ function autoLoadClasses($className){
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
     <link rel="mask-icon" href="assets/img/fav/safari-pinned-tab.svg" color="#5bbad5">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/fa/all.css">
     <link rel="stylesheet" href="assets/styles/styles.css?">
 
     <script src="script/portal/global.js"></script>
-  <title>Se våra filmer & VOD's | Widr.tv</title>
+  <title><?php echo $newTitle ?></title>
   </head>
 
 
@@ -108,16 +128,17 @@ function autoLoadClasses($className){
             include_once "assets/portalDom/profile.php";
           } else {
             include_once "assets/portalDom/spotlightHeader.php";
+            include_once "assets/portalDom/watched_onerow.php";
             include_once "assets/portalDom/carousel.php";
             include_once "assets/portalDom/midRecom.php";
             include_once "assets/portalDom/widerecom.php";
-            include_once "assets/portalDom/watched_onerow.php";
           }
           # User is logged in, inport footer + nav
           include_once 'assets/portalDom/footer.php';
           include_once 'assets/portalDom/portalNav.php';
         }
       }
+
 
 
      ?>

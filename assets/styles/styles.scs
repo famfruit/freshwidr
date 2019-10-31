@@ -2888,8 +2888,8 @@ body.flx p {
 }
 body.flx span.small.xxl {
   color: #ef9f48;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 400;
 }
 body.flx span.small {
   color: rgba(239, 159, 72, 0.8);
@@ -4643,9 +4643,9 @@ body.flx .pcnav .navcontent {
 }
 body.flx .pcnav img {
   position: absolute;
-  top: 5px;
-  left: 0px;
-  max-width: 80px;
+  top: 20px;
+  left: -20px;
+  max-width: 100px;
 }
 body.flx .pcnav i.active {
   color: #ef9f48;
@@ -10493,4 +10493,4 @@ body.stpScrl {
   bottom: 0;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.scs.map */

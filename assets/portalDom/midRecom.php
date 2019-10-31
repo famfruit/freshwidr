@@ -116,7 +116,7 @@
 
         <div class="info">
 
-        <h1><?php echo ucfirst(str_replace("-", " ",$data['results'][0]['title'])) ?></h1>
+        <h1><?php echo ucfirst(str_replace("-", " ",$row['title'])) ?></h1>
         <p><?php echo $data['results'][0]['overview'] ?></p>
         <div class="headerbuttons">
           <a href="?<?php echo $atg?>=<?php echo $row['title'] ?>">
@@ -124,6 +124,7 @@
            </a>
         </div>
         <div class="headerSpecs">
+          <span class="avg"><?php echo number_format($row['i_avg'], 1)?></span>
           <i class="fas fa-theater-masks"><?php echo $genre ?></i>
         </div>
       </div>

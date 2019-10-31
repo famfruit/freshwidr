@@ -109,15 +109,17 @@
                       if($row['status'] == 0){
                         $pref = "on";
                         $p = "AKTIV";
+                        $r = "AKTIV";
                       } else {
                         $pref = "off";
                         $p = "INAKTIV";
+                        $r = $p." (".strtoupper($row['reguser']).")";
                       }
 
                     ?>
                     <table class="<?php echo $pref ?>">
                       <tr>
-                        <td class="status on"><?php echo $p ?></td>
+                        <td class="status on"><?php echo $r ?></td>
                         <td class="key"><?php echo $row['vkey'] ?></td>
                         <td class="date"><?php echo $row['date']?></td>
                       </tr>

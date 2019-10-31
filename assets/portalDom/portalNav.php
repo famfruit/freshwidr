@@ -23,7 +23,7 @@
 
 <div class="pcnav">
   <a href="?logout=t" class="logout">Logga ut</a>
-  <img src="assets/img/widrblack.png" alt="">
+  <img src="assets/img/telly.png" alt="">
   <div class="navcontent">
     <a href="netflix.php">
       <i class="fas fa-home">Hem</i>

@@ -18,5 +18,5 @@
           </div>
 
     </div>
-    <img class="logoimg" src="assets/img/widrblack.png" alt="">
+    <img class="logoimg" src="assets/img/telly.png" alt="">
   </div>

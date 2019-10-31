@@ -25,8 +25,13 @@
                });
                $type = array_reverse($type);
                foreach($type as $k => $v){
+                 if($v['type'] == 'serie'){
+                   $urlExtras = "&se=".$v['Spointer']."&ep=".$v['Epointer'];
+                 } else {
+                   $urlExtras = "";
+                 }
                 ?>
-                <a href="<?php echo "?".$key."=".$v['title'] ?>">
+                <a href="<?php echo "?".$key."=".$v['title'].$urlExtras ?>">
                   <div class="block" style="background-image: url(<?php echo 'https://image.tmdb.org/t/p/w185'.$v['img'] ?>)">
                     <h1 class="small"><?php echo ucfirst(str_replace("-", " ", $v['title'])) ?></h1>
                   </div>

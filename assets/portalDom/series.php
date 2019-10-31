@@ -12,9 +12,7 @@
 
           ?>
             <span class="queryError">Vi kunde tyvärr inte ladda videon.</span>
-            <div class="centerDiv customPos">
-              <span class="qe report">Rapportera felmeddelande</span>
-            </div>
+
           <?php
         } else {
           $data = $main->getFromAPI_tv($row['title'])['results'][0];
@@ -25,12 +23,34 @@
           $rawgenre = $row['genre'];
           $rawtype = "serie";
           $sqlpointer = "series";
+
+
+              if(isset($main->seasonPick) && isset($main->episodePick)){
+                $main->seasonPick = $main->seasonPick . "";
+                $main->episodePick = $main->episodePick - 1;
+                $vidlink = "";
+                if(isset($sources[$main->seasonPick])){
+                  # The season exists
+                  if(isset($sources[$main->seasonPick][$main->episodePick])){
+                    # Episode exists
+                    $vidlink = $sources[$main->seasonPick][$main->episodePick];
+                  } else {
+                    # Episode does NOT exists
+                  }
+                } else {
+                   # Season does no exists
+                }
+              } else {
+                $main->fixQuery();
+              }
+
+
           ?>
           <div class="section player">
 
             <div class="videopl">
               <div class="lds-ellipsis hidden orange"><div></div><div></div><div></div><div></div></div>
-              <iframe id="ifrmsrc" data-ifrmsrc="<?php echo $sources['1'][$start] ?>" frameborder='0' allowfullscreen src=""></iframe>
+              <iframe id="ifrmsrc" data-ifrmsrc="<?php echo $vidlink ?>" frameborder='0' allowfullscreen src=""></iframe>
             </div>
             <div class="mediainformation">
               <h1><?php echo ucfirst(str_replace("-", " ", $row['title'])) ?> <strong><?php echo number_format($data['popularity'], 1) ?></strong>  </h1>
@@ -45,16 +65,16 @@
                     echo "<h1 class=".$akt." >Säsong ".ucfirst(str_replace("_", " ", $key))."</h1>";
 
                   }
-
                   foreach($value as $k => $v){
                     $active = "";
-                    if($k == 0 && $key == 1){
+                    if($key == $main->seasonPick && $k == $main->episodePick){
                       $active = "active";
                     }
-                  #  $k = $k + 1;
                     $k++;
                     ?>
-                    <span data-lnk="<?php echo $v ?>" class="epsd <?php echo $active ?>"><?php echo "episode <strong>".$k."</strong>"  ?></span>
+                    <a href="<?php echo "?serie={$main->seriesPage}&se={$key}&ep={$k}" ?>">
+                      <span data-lnk="<?php echo "?se={$key}&ep={$k}" ?>" class="epsd <?php echo $active ?>"><?php echo "avsnitt <strong>".$k."</strong>"  ?></span>
+                    </a>
                     <?php
                   }
                 }
@@ -244,7 +264,7 @@
     } else {
       ?>
       <span class="queryError">Vi kunde tyvärr inte hitta det du letade efter :( </span>
-      <img class="qe" src="assets/img/error.png" alt="">
+
       <?php
     } ?>
   </div>

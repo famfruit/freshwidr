@@ -1,16 +1,16 @@
 <?php
 
   if($main->moviePage != 'alla'){
-      $result = $main->getFromMysql("SELECT * FROM movies WHERE MATCH(title) AGAINST ('$main->moviePage' IN NATURAL LANGUAGE MODE) LIMIT 1");
+      #$result = $main->getFromMysql("SELECT * FROM movies WHERE MATCH(title) AGAINST ('$main->moviePage' IN NATURAL LANGUAGE MODE) LIMIT 1");
+      $result = $main->getFromMysql("SELECT * FROM movies_test WHERE title LIKE '%$main->moviePage%' LIMIT 1");
       if($result->num_rows > 0){
         while($row = mysqli_fetch_assoc($result)){
+          $vidId = $row['id'];
           if(!$main->getFromAPI($row['title'])['results']){
 
             ?>
               <span class="queryError">Vi kunde tyvärr inte ladda videon.</span>
-              <div class="centerDiv customPos">
-                <span class="qe report">Rapportera felmeddelande</span>
-              </div>
+
             <?php
           } else {
             $data = $main->getFromAPI($row['title'])['results'][0];
@@ -22,7 +22,6 @@
             $rawgenre = $row['genre'];
             $rawtype = "movie";
             $sqlpointer = "movies";
-            var_dump($data);
             ?>
             <div class="section player">
               <div class="videopl">
@@ -48,13 +47,25 @@
             </div>
             <?php
             include_once 'assets/portalDom/similar_block.php';
+            ?>
+
+              <div class="reportContent">
+                <span class="reportBtn" data-usr="<?php echo $main->decodedUser['username'];?>">Rapportera fel</span>
+              </div>
+              <div class="reportContentOptions" id="movies" data-vlid="<?php echo $vidId ?>">
+                <span data-vl="0" class="specRepBtn"><i class="fas fa-meh"></i>Dålig Kvalité</span>
+                <span data-vl="1" class="specRepBtn skip"><i class="fas fa-unlink"></i>Trasig videolänk</span>
+                <span data-vl="2" class="specRepBtn"><i class="fas fa-align-left"></i>Felaktig beskrivning </span>
+                <span data-vl="3" class="specRepBtn skip"><i class="fas fa-image"></i>Bild saknas</span>
+                <span data-vl="4" class="specRepBtn mid"><i class="fas fa-dumpster-fire"></i>Allt är åt helvete</span>
+              </div>
+            <?php
           }
 
         }
       } else {
         ?>
         <span class="queryError">Vi kunde tyvärr inte hitta det du letade efter :( </span>
-        <img class="qe" src="assets/img/error.png" alt="">
         <?php
       }
   } else {
@@ -197,7 +208,7 @@
       ?>
       <span class="small" style="display: block; width: 100%; margin: 5px 0 10px 0">Alla filmer</span>
       <?php
-      $result = $main->getFromMysql("SELECT * FROM movies WHERE status = 0 ORDER BY releasedate DESC LIMIT 40");
+      $result = $main->getFromMysql("SELECT * FROM movies_test WHERE status = 0 ORDER BY releasedate DESC LIMIT 40");
       if($result->num_rows > 0){
         while($row = mysqli_fetch_assoc($result)){
           $imgstring = "https://image.tmdb.org/t/p/w185".$row['img'];
@@ -214,12 +225,9 @@
       <?php
 
     }
-      # Inkludera utanför loop
-      #include_once 'assets/portalDom/watched.php';
     } else {
       ?>
       <span class="queryError">Vi kunde tyvärr inte hitta det du letade efter :( </span>
-      <img class="qe" src="assets/img/error.png" alt="">
       <?php
     } ?>
   </div>
